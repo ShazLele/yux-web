@@ -37,6 +37,33 @@ block content
                                             a(href='#') gulp
                                             a /
                                             a(href='#') 构建工具
-
-                    slide.col.l3.hide-on-med-and-down.main-slide
-                        h2 侧边栏
+                    aside.col.l3.hide-on-med-and-down.main-slide
+                        ul.slide-main
+                            li
+                                p.main-title 分类目录
+                                ul.main-type
+                                    li
+                                        a js
+                                    li
+                                        a css
+                                    li
+                                        a node
+                                    li
+                                        a angular
+                            li
+                                p.main-title 近期文章
+                                ul.main-recent
+                                    li
+                                        a nodejs基础教程
+                                    li
+                                        a 快速入门angular
+                                    li
+                                        a 你不知道的es6
+                                    li
+                                        a 一起学习react
+                            li
+                                p.main-title 热门标签
+                                div
+                                    -var num=['js','css','nodejs','react','angularjs'];
+                                    for i in num
+                                        a 标签#{i}
