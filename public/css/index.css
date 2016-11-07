@@ -65,5 +65,18 @@
         @media only screen and (max-width: 600px) {
           .view-index .index-main .main-content .content-list .list-item .item-info {
             font-size: 1.25rem; } }
+  .view-index .index-main .main-slide {
+    background: #f5f5f5;
+    padding: 0 20px; }
+    @media only screen and (max-width: 992px) {
+      .view-index .index-main .main-slide {
+        padding: 0 0.75rem; } }
+    .view-index .index-main .main-slide .slide-main .main-title {
+      font-size: 16px;
+      font-weight: bold; }
+    .view-index .index-main .main-slide .slide-main .main-type > li {
+      padding-left: 12px; }
+    .view-index .index-main .main-slide .slide-main .main-recent > li {
+      padding-left: 12px; }
 
 /*# sourceMappingURL=index.css.map */

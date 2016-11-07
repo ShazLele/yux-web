@@ -94,6 +94,29 @@ $padding-xs: 12px;
         }
       }
     }
+    .main-slide {
+      background: $grey-lighten-4;
+      padding: 0 $padding-normal;
+      @media #{$medium-and-down} {
+        padding: 0 0.75rem;
+      }
+      .slide-main {
+        .main-title {
+          font-size: 16px;
+          font-weight: bold;
+        }
+        .main-type {
+          & > li {
+            padding-left: $padding-xs;
+          }
+        }
+        .main-recent {
+          & > li {
+            padding-left: $padding-xs;
+          }
+        }
+      }
 
+    }
   }
 }

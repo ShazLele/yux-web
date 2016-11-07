@@ -355,8 +355,7 @@ th {
   padding: 0; }
 
 body {
-  font-family: '微软雅黑', Consolas, 'Liberation Mono', Menlo, Courier, monospace;
-  font-size: 12px; }
+  font-family: '微软雅黑', Consolas, 'Liberation Mono', Menlo, Courier, monospace; }
 
 @media only screen and (min-width: 1200px) {
   .container {
@@ -366,6 +365,8 @@ body {
     width: 80%; } }
 .view-header {
   background: #fff; }
+  .view-header .header-nav {
+    margin-left: 80px; }
 
 .view-footer {
   background: #263238;
