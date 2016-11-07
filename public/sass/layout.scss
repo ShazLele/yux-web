@@ -1,0 +1,18 @@
+@import "color";
+
+.view-header {
+  background: $white;
+}
+
+.view-footer {
+  background: $gray-footer;
+  color: $white;
+}
+
+.nav-white {
+  background: $white;
+  a {
+    color: $black;
+  }
+}
+

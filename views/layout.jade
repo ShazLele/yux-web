@@ -1,0 +1,33 @@
+doctype html
+html
+    head
+        meta(charset='UTF-8')
+        meta(name='viewport',content='width=device-width,initail-scale=1')
+        title= title
+        link(rel='stylesheet',href='/components/Materialize/dist/css/materialize.css')
+        link(rel='stylesheet',href='/components/font-awesome-4.6.3/css/font-awesome.css')
+        link(rel='stylesheet',href='/css/yux-ui.css')
+        block css
+    body.grey.lighten-3
+        -var menus=[{url:'index',title:'首页'},{url:'article/list',title:'文章列表'}];
+        div.view-header
+            nav.nav-white
+                div.nav-wrapper
+                    a.brand-logo(href='#') YuX
+                    a.button-collapse(data-activates='mobile-nav')
+                        i.fa.fa-bars
+                    ul.right.hide-on-med-and-down
+                        each item in menus
+                            li
+                                a(href="#{item.url}") #{item.title}
+                    ul.side-nav#mobile-nav
+                        each item in menus
+                            li
+                                a(href='#{item.url}') #{item.title}
+        block content
+        footer.view-footer.page-footer.blue-grey.darken-3
+            div.container
+                div.row
+                    div.l6.s12
+                        h5.white-text Footer Content
+            div.footer-copyright.blue-grey.darken-4

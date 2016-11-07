@@ -1,0 +1,99 @@
+@import "color";
+@import "media";
+
+$margin-normal: 20px;
+$margin-xs: 12px;
+$margin-xs-2: 6px;
+$padding-normal: 20px;
+$padding-xs: 12px;
+.view-index {
+  margin-top: $margin-normal;
+  .index-main {
+    .main-content {
+      padding: $padding-normal;
+      .content-ad {
+        height: 220px;
+        div {
+          height: 100%;
+        }
+      }
+      .content-list {
+        .list-title {
+          border-bottom: 2px solid $grey-lighten-2;
+          position: relative;
+          &:before {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            display: inline-block;
+            width: 90px;
+            height: 3px;
+            background: $red-lighten-2;
+          }
+        }
+        .list-item {
+          padding-top: $padding-xs;
+          padding-bottom: $padding-xs;
+          .item-title {
+            font-weight: bolder;
+            font-size: 18px;
+            display: block;
+            //<993px
+            @media #{$medium-only}{
+              font-size: 1.45rem;
+            }
+            //<661px
+            @media #{$small-and-down} {
+              font-size: 1.75rem;
+            }
+          }
+
+          .item-author {
+            padding-top: $padding-xs;
+            color: $grey;
+            //<993px
+            @media #{$medium-only}{
+              font-size: 1rem;
+            }
+            @media #{$small-and-down}{
+              font-size: 1.25rem;
+            }
+
+            span {
+              margin-right: $margin-xs;
+            }
+          }
+          .item-desc {
+            text-indent: 2em;
+            text-align: justify;
+            font-size: 14px;
+            line-height: 1.75;
+            @media #{$medium-only}{
+              font-size: 1.1rem;
+            }
+            @media #{$small-and-down}{
+              font-size: 1.25rem;
+            }
+          }
+          .item-info {
+            font-size: 14px;
+            color: $grey;;
+            span {
+              margin-left: $margin-xs;
+            }
+            a {
+              margin-left: $margin-xs-2;
+            }
+            @media #{$medium-only}{
+              font-size: 1rem;
+            }
+            @media #{$small-and-down}{
+              font-size: 1.25rem;
+            }
+          }
+        }
+      }
+    }
+
+  }
+}

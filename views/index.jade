@@ -1,0 +1,42 @@
+extends layout
+-var demonum=10;
+block css
+    link(rel='stylesheet',href='/css/index.css')
+block content
+    div.view-index
+
+        div.index-main
+            div.container
+                div.row
+                    div.col.l9.m12.white.main-content
+                        div.row.content-ad
+                            div.col.s12
+                                div.grey.lighten-2
+                                    span Ad
+                        div.row.content-list
+                            div.col.s12
+                                div.list-title
+                                    h5 最新文章
+                            -var num=new Array(10);
+                            each n in num
+                                div.col.s12.list-item
+                                    a.item-title gulp入门
+                                    div.item-author
+                                        span 秋末寒雨
+                                        span 发表于
+                                        span 2016-10-11
+                                    p.item-desc.
+                                        gulp是前端开发过程中对代码进行构建的工具，
+                                        是自动化项目的构建利器；她不仅能对网站资源进行优化，
+                                        而且在开发过程中很多重复的任务能够使用正确的工具自动完成；
+                                        使用她，我们不仅可以很愉快的编写代码，而且大大提高我们的工作效率。
+                                    p.right-align.item-info
+                                        span 阅读(10)
+                                        span 评论(10)
+                                        span 标签:
+                                            a(href='#') gulp
+                                            a /
+                                            a(href='#') 构建工具
+
+                    slide.col.l3.hide-on-med-and-down.main-slide
+                        h2 侧边栏
