@@ -10,6 +10,7 @@ app.set('view engine', 'jade');
 app.set('views', 'views');
 
 app.use('/', index);
+app.use('/index', index);
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(function (req, res) {
     res.render('index', {title: 'Not Found'});
