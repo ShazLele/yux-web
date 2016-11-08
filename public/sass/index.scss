@@ -40,6 +40,9 @@
         font-weight: bolder;
         font-size: 18px;
         color: $title-normal;
+        &:hover {
+          color: $a-active-color;
+        }
         //<993px
         @media #{$medium-only}{
           font-size: 1.45rem;
@@ -81,17 +84,32 @@
       .item-info {
         font-size: 14px;
         color: $assist-color;
+
         span {
           margin-left: $margin-xs;
         }
-        a {
-          margin-left: $margin-xs-2;
+        div {
+          display: inline-block;
+          a {
+            margin-left: $margin-xs-2;
+          }
         }
+
         @media #{$medium-only}{
           font-size: 1rem;
         }
         @media #{$small-and-down}{
           font-size: 1.25rem;
+          div {
+            display: block;
+            text-align: left;
+            font-size: 1.2rem;
+            padding-top:$padding-xs-3;
+            a {
+              padding: $padding-xs-4 $padding-xs;
+              border: 1px solid $assist-border;
+            }
+          }
         }
       }
     }

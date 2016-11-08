@@ -13,17 +13,20 @@ html
         div.view-header
             nav.nav-white
                 div.nav-wrapper
-                    a.brand-logo(href='#') YuX
-                    a.button-collapse(data-activates='mobile-nav')
-                        i.fa.fa-bars
-                    ul.hide-on-med-and-down.header-nav
-                        each item in menus
-                            li
-                                a(href="#{item.url}") #{item.title}
-                    ul.side-nav#mobile-nav
-                        each item in menus
-                            li
-                                a(href='#{item.url}') #{item.title}
+                    div.container
+                        div.row
+                            div.col-xs-12
+                                a.brand-logo(href='#') YuX
+                                    a.button-collapse(data-activates='mobile-nav')
+                                        i.fa.fa-bars
+                                    ul.hide-on-med-and-down.header-nav
+                                        each item in menus
+                                            li
+                                                a(href="#{item.url}") #{item.title}
+                                    ul.side-nav#mobile-nav
+                                        each item in menus
+                                            li
+                                                a(href='#{item.url}') #{item.title}
 
         div.view-layout
             div.layout-main

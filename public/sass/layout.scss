@@ -44,7 +44,7 @@
           font-weight: bold;
           padding-left: $padding-xs;
           border-left: 3px solid $title-border;
-          color:$title-normal;
+          color: $title-normal;
         }
         .menu-type {
           & > li {
@@ -68,7 +68,6 @@
             padding: $padding-xs-2 $padding-xs;
             margin: $margin-xs-2 $margin-xs $margin-xs-2 0;
             font-size: 12px;
-            cursor: pointer;
             transition: $transition-timer color, $transition-timer background;
             &:hover {
               background: $teal-lighten-1;
