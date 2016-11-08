@@ -14,7 +14,7 @@
         position: absolute;
         bottom: -2px;
         display: inline-block;
-        width: 90px;
+        width: 100px;
         height: 3px;
         background: #e57373; }
     .view-index .index-main .main-content .content-list .list-item {
@@ -65,18 +65,50 @@
         @media only screen and (max-width: 600px) {
           .view-index .index-main .main-content .content-list .list-item .item-info {
             font-size: 1.25rem; } }
-  .view-index .index-main .main-slide {
+  .view-index .index-main .main-aside {
     background: #f5f5f5;
     padding: 0 20px; }
     @media only screen and (max-width: 992px) {
-      .view-index .index-main .main-slide {
+      .view-index .index-main .main-aside {
         padding: 0 0.75rem; } }
-    .view-index .index-main .main-slide .slide-main .main-title {
+    .view-index .index-main .main-aside .search-wrapper {
+      position: relative; }
+      .view-index .index-main .main-aside .search-wrapper input {
+        transition: box-shadow 0.25s; }
+        .view-index .index-main .main-aside .search-wrapper input:focus + i {
+          color: #26a69a; }
+      .view-index .index-main .main-aside .search-wrapper i {
+        position: absolute;
+        right: 5px;
+        top: 15px;
+        font-size: 20px;
+        transition: 0.25s color;
+        cursor: pointer; }
+    .view-index .index-main .main-aside .menu-wrapper .menu-title {
       font-size: 16px;
       font-weight: bold; }
-    .view-index .index-main .main-slide .slide-main .main-type > li {
-      padding-left: 12px; }
-    .view-index .index-main .main-slide .slide-main .main-recent > li {
-      padding-left: 12px; }
+    .view-index .index-main .main-aside .menu-wrapper .menu-type > li {
+      padding: 4px 12px; }
+      .view-index .index-main .main-aside .menu-wrapper .menu-type > li > a {
+        color: #263238;
+        transition: color 0.25s;
+        cursor: pointer; }
+        .view-index .index-main .main-aside .menu-wrapper .menu-type > li > a:hover {
+          text-decoration: underline;
+          color: #26a69a; }
+      .view-index .index-main .main-aside .menu-wrapper .menu-type > li > span {
+        margin-left: 6px; }
+    .view-index .index-main .main-aside .menu-wrapper .menu-hotlabel a {
+      display: inline-block;
+      border: 1px solid #e0e0e0;
+      color: #9e9e9e;
+      padding: 4px 6px;
+      margin: 6px 12px 6px 0;
+      font-size: 12px;
+      cursor: pointer;
+      transition: 0.25s color, 0.25s background; }
+      .view-index .index-main .main-aside .menu-wrapper .menu-hotlabel a:hover {
+        background: #26a69a;
+        color: #fff; }
 
 /*# sourceMappingURL=index.css.map */

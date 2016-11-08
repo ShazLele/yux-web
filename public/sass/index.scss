@@ -1,11 +1,8 @@
 @import "color";
 @import "media";
+@import "px";
 
-$margin-normal: 20px;
-$margin-xs: 12px;
-$margin-xs-2: 6px;
-$padding-normal: 20px;
-$padding-xs: 12px;
+$transition-timer: .25s;
 .view-index {
   margin-top: $margin-normal;
   .index-main {
@@ -26,7 +23,7 @@ $padding-xs: 12px;
             position: absolute;
             bottom: -2px;
             display: inline-block;
-            width: 90px;
+            width: 100px;
             height: 3px;
             background: $red-lighten-2;
           }
@@ -94,29 +91,77 @@ $padding-xs: 12px;
         }
       }
     }
-    .main-slide {
+    .main-aside {
       background: $grey-lighten-4;
       padding: 0 $padding-normal;
       @media #{$medium-and-down} {
         padding: 0 0.75rem;
       }
-      .slide-main {
-        .main-title {
+      .search-wrapper {
+        position: relative;
+        input {
+          transition: box-shadow $transition-timer;
+          &:focus {
+            + i {
+              color: $teal-lighten-1;
+            }
+          }
+        }
+        i {
+          position: absolute;
+          right: 5px;
+          top: 15px;
+          font-size: 20px;
+          transition: 0.25s color;
+          cursor: pointer;
+        }
+      }
+      .menu-wrapper {
+        .menu-title {
           font-size: 16px;
           font-weight: bold;
         }
-        .main-type {
+        .menu-type {
           & > li {
-            padding-left: $padding-xs;
+            padding: $padding-xs-3 $padding-xs;
+            //height:30px;
+            //line-height:30px;
+            & > a {
+              color: $blue-grey-darken-4;
+              transition: color $transition-timer;
+              cursor: pointer;
+              &:hover {
+                text-decoration: underline;
+                color: $teal-lighten-1;
+              }
+            }
+            & > span {
+              margin-left: $margin-xs-2;
+            }
           }
         }
-        .main-recent {
+        .menu-recent {
           & > li {
-            padding-left: $padding-xs;
+
+          }
+        }
+        .menu-hotlabel {
+          a {
+            display: inline-block;
+            border: 1px solid $grey-lighten-2;
+            color: $grey;
+            padding: $padding-xs-3 $padding-xs-2;
+            margin: $margin-xs-2 $margin-xs $margin-xs-2 0;
+            font-size: 12px;
+            cursor: pointer;
+            transition: $transition-timer color, $transition-timer background;
+            &:hover {
+              background: $teal-lighten-1;
+              color: $white;
+            }
           }
         }
       }
-
     }
   }
 }
