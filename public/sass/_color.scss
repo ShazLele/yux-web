@@ -6,6 +6,9 @@ $grey-lighten-3: #eeeeee;
 $grey-lighten-2: #e0e0e0;
 $grey: #9e9e9e;
 
+$grey-darken-3: #424242;
+
+$blue-grey-darken-3: #37474f;
 $blue-grey-darken-4: #263238;
 
 $red-lighten-3: #ef9a9a;
@@ -14,3 +17,19 @@ $red-lighten-2: #e57373;
 $teal-lighten-1: #26a69a;
 
 $gray-footer: $blue-grey-darken-4;
+
+//web-theme
+
+// title color
+$title-normal: $grey-darken-3;
+
+//title left or bottom border color
+$title-border: $teal-lighten-1;
+$content-color: $blue-grey-darken-3;
+$assist-color: $grey;
+$assist-border: $grey-lighten-2;
+
+$horizontal-color: $grey-lighten-2;
+
+$a-color:$content-color;
+$a-active-color:$teal-lighten-1;

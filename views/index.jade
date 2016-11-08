@@ -4,74 +4,33 @@ block css
     link(rel='stylesheet',href='/css/index.css')
 block content
     div.view-index
+        div.row.index-ad
+            div.col.s12
+                div.grey.lighten-2
+                    p One More Change
+        div.row.index-list
+            div.col.s12
+                div.list-title
+                    h5 最新文章
+            -var num=new Array(10);
+            each n in num
+                div.col.s12.list-item
+                    a.item-title gulp入门
+                    div.item-author
+                        span 秋末寒雨
+                        span 发表于
+                        span 2016-10-11
+                    p.item-desc.
+                        gulp是前端开发过程中对代码进行构建的工具，
+                        是自动化项目的构建利器；她不仅能对网站资源进行优化，
+                        而且在开发过程中很多重复的任务能够使用正确的工具自动完成；
+                        使用她，我们不仅可以很愉快的编写代码，而且大大提高我们的工作效率。
+                    p.right-align.item-info
+                        span 阅读(10)
+                        span 评论(10)
+                        span 标签:
+                            a(href='#') gulp
+                            a /
+                            a(href='#') 构建工具
 
-        div.index-main
-            div.container
-                div.row
-                    div.col.l9.m12.white.main-content
-                        div.row.content-ad
-                            div.col.s12
-                                div.grey.lighten-2
-                                    span Ad
-                        div.row.content-list
-                            div.col.s12
-                                div.list-title
-                                    h5 最新文章
-                            -var num=new Array(10);
-                            each n in num
-                                div.col.s12.list-item
-                                    a.item-title gulp入门
-                                    div.item-author
-                                        span 秋末寒雨
-                                        span 发表于
-                                        span 2016-10-11
-                                    p.item-desc.
-                                        gulp是前端开发过程中对代码进行构建的工具，
-                                        是自动化项目的构建利器；她不仅能对网站资源进行优化，
-                                        而且在开发过程中很多重复的任务能够使用正确的工具自动完成；
-                                        使用她，我们不仅可以很愉快的编写代码，而且大大提高我们的工作效率。
-                                    p.right-align.item-info
-                                        span 阅读(10)
-                                        span 评论(10)
-                                        span 标签:
-                                            a(href='#') gulp
-                                            a /
-                                            a(href='#') 构建工具
-                    aside.col.l3.hide-on-med-and-down.main-aside
-                        div.search-wrapper
-                            input#search
-                            i.fa.fa-search
 
-                        ul.menu-wrapper
-                            li
-                                p.menu-title 分类目录
-                                ul.menu-type
-                                    li
-                                        a js
-                                        span (10)
-                                    li
-                                        a css
-                                        span (11)
-                                    li
-                                        a node
-                                        span (22)
-                                    li
-                                        a angular
-                                        span (30)
-                            li
-                                p.menu-title 近期文章
-                                ul.menu-recent.menu-type
-                                    li
-                                        a nodejs基础教程
-                                    li
-                                        a 快速入门angular
-                                    li
-                                        a 你不知道的es6
-                                    li
-                                        a 一起学习react
-                            li
-                                p.menu-title 热门标签
-                                div.menu-hotlabel
-                                    -var num=['js','css','nodejs','react','angularjs'];
-                                    for i in num
-                                        a 标签#{i}

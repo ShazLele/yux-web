@@ -363,10 +363,63 @@ body {
 @media only screen and (min-width: 993px) and (max-width: 1200px) {
   .container {
     width: 80%; } }
+a {
+  color: #37474f;
+  transition: color 0.25s;
+  cursor: pointer; }
+  a:hover {
+    text-decoration: underline;
+    color: #26a69a; }
+
 .view-header {
   background: #fff; }
   .view-header .header-nav {
     margin-left: 80px; }
+
+.view-layout {
+  margin-top: 20px; }
+  .view-layout .layout-main .main-aside {
+    background: #f5f5f5;
+    padding: 0 20px; }
+    @media only screen and (max-width: 992px) {
+      .view-layout .layout-main .main-aside {
+        padding: 0 0.75rem; } }
+    .view-layout .layout-main .main-aside .search-wrapper {
+      position: relative; }
+      .view-layout .layout-main .main-aside .search-wrapper input {
+        transition: box-shadow 0.25s; }
+        .view-layout .layout-main .main-aside .search-wrapper input:focus + i {
+          color: #26a69a; }
+      .view-layout .layout-main .main-aside .search-wrapper i {
+        position: absolute;
+        right: 5px;
+        top: 15px;
+        font-size: 20px;
+        transition: 0.25s color;
+        cursor: pointer; }
+    .view-layout .layout-main .main-aside .menu-wrapper .menu-title {
+      font-size: 14px;
+      font-weight: bold;
+      padding-left: 12px;
+      border-left: 3px solid #26a69a;
+      color: #424242; }
+    .view-layout .layout-main .main-aside .menu-wrapper .menu-type > li {
+      padding: 4px 12px; }
+      .view-layout .layout-main .main-aside .menu-wrapper .menu-type > li > span {
+        margin-left: 6px;
+        color: #9e9e9e; }
+    .view-layout .layout-main .main-aside .menu-wrapper .menu-hotlabel a {
+      display: inline-block;
+      border: 1px solid #e0e0e0;
+      color: #9e9e9e;
+      padding: 6px 12px;
+      margin: 6px 12px 6px 0;
+      font-size: 12px;
+      cursor: pointer;
+      transition: 0.25s color, 0.25s background; }
+      .view-layout .layout-main .main-aside .menu-wrapper .menu-hotlabel a:hover {
+        background: #26a69a;
+        color: #fff; }
 
 .view-footer {
   background: #263238;

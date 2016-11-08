@@ -1,0 +1,9 @@
+a {
+  color: $a-color;
+  transition: color $transition-timer;
+  cursor: pointer;
+  &:hover {
+    text-decoration: underline;
+    color: $a-active-color;
+  }
+}

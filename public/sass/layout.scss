@@ -1,10 +1,85 @@
 @import "color";
+@import "media";
+@import "var";
 
 .view-header {
   background: $white;
-  .header-nav{
-    margin-left:80px;
+  .header-nav {
+    margin-left: 80px;
   }
+}
+
+.view-layout {
+
+  margin-top: $margin-normal;
+  .layout-main {
+    .main-aside {
+      background: $grey-lighten-4;
+      padding: 0 $padding-normal;
+      @media #{$medium-and-down} {
+        padding: 0 0.75rem;
+      }
+      .search-wrapper {
+        position: relative;
+        input {
+          transition: box-shadow $transition-timer;
+          &:focus {
+            + i {
+              color: $teal-lighten-1;
+            }
+          }
+        }
+        i {
+          position: absolute;
+          right: 5px;
+          top: 15px;
+          font-size: 20px;
+          transition: 0.25s color;
+          cursor: pointer;
+        }
+      }
+      .menu-wrapper {
+        .menu-title {
+          font-size: $font-size-normal;
+          font-weight: bold;
+          padding-left: $padding-xs;
+          border-left: 3px solid $title-border;
+          color:$title-normal;
+        }
+        .menu-type {
+          & > li {
+            padding: $padding-xs-3 $padding-xs;
+            & > span {
+              margin-left: $margin-xs-2;
+              color: $assist-color;
+            }
+          }
+        }
+        .menu-recent {
+          & > li {
+
+          }
+        }
+        .menu-hotlabel {
+          a {
+            display: inline-block;
+            border: 1px solid $assist-border;
+            color: $assist-color;
+            padding: $padding-xs-2 $padding-xs;
+            margin: $margin-xs-2 $margin-xs $margin-xs-2 0;
+            font-size: 12px;
+            cursor: pointer;
+            transition: $transition-timer color, $transition-timer background;
+            &:hover {
+              background: $teal-lighten-1;
+              color: $white;
+            }
+          }
+        }
+      }
+    }
+  }
+
 }
 
 .view-footer {

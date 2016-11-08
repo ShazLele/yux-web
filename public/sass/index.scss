@@ -1,167 +1,100 @@
 @import "color";
 @import "media";
-@import "px";
+@import "var";
 
-$transition-timer: .25s;
 .view-index {
-  margin-top: $margin-normal;
-  .index-main {
-    .main-content {
-      padding: $padding-normal;
-      .content-ad {
-        height: 220px;
-        div {
-          height: 100%;
-        }
-      }
-      .content-list {
-        .list-title {
-          border-bottom: 2px solid $grey-lighten-2;
-          position: relative;
-          &:before {
-            content: '';
-            position: absolute;
-            bottom: -2px;
-            display: inline-block;
-            width: 100px;
-            height: 3px;
-            background: $red-lighten-2;
-          }
-        }
-        .list-item {
-          padding-top: $padding-xs;
-          padding-bottom: $padding-xs;
-          .item-title {
-            font-weight: bolder;
-            font-size: 18px;
-            display: block;
-            //<993px
-            @media #{$medium-only}{
-              font-size: 1.45rem;
-            }
-            //<661px
-            @media #{$small-and-down} {
-              font-size: 1.75rem;
-            }
-          }
-
-          .item-author {
-            padding-top: $padding-xs;
-            color: $grey;
-            //<993px
-            @media #{$medium-only}{
-              font-size: 1rem;
-            }
-            @media #{$small-and-down}{
-              font-size: 1.25rem;
-            }
-
-            span {
-              margin-right: $margin-xs;
-            }
-          }
-          .item-desc {
-            text-indent: 2em;
-            text-align: justify;
-            font-size: 14px;
-            line-height: 1.75;
-            @media #{$medium-only}{
-              font-size: 1.1rem;
-            }
-            @media #{$small-and-down}{
-              font-size: 1.25rem;
-            }
-          }
-          .item-info {
-            font-size: 14px;
-            color: $grey;;
-            span {
-              margin-left: $margin-xs;
-            }
-            a {
-              margin-left: $margin-xs-2;
-            }
-            @media #{$medium-only}{
-              font-size: 1rem;
-            }
-            @media #{$small-and-down}{
-              font-size: 1.25rem;
-            }
-          }
-        }
+  padding: $padding-normal;
+  .index-ad {
+    height: 220px;
+    div {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      p {
+        display: inline-block;
+        font-size: 32px;
+        text-align: center;
       }
     }
-    .main-aside {
-      background: $grey-lighten-4;
-      padding: 0 $padding-normal;
-      @media #{$medium-and-down} {
-        padding: 0 0.75rem;
+  }
+  .index-list {
+    .list-title {
+      border-bottom: 2px solid $horizontal-color;
+      position: relative;
+      &:before {
+        content: '';
+        position: absolute;
+        bottom: -2px;
+        display: inline-block;
+        width: 100px;
+        height: 3px;
+        background: $title-border;
       }
-      .search-wrapper {
-        position: relative;
-        input {
-          transition: box-shadow $transition-timer;
-          &:focus {
-            + i {
-              color: $teal-lighten-1;
-            }
-          }
+    }
+    .list-item {
+      padding-top: $padding-xs;
+      padding-bottom: $padding-xs;
+      border-bottom: 2px solid $horizontal-color;
+      .item-title {
+        font-weight: bolder;
+        font-size: 18px;
+        color: $title-normal;
+        //<993px
+        @media #{$medium-only}{
+          font-size: 1.45rem;
         }
-        i {
-          position: absolute;
-          right: 5px;
-          top: 15px;
-          font-size: 20px;
-          transition: 0.25s color;
-          cursor: pointer;
+        //<661px
+        @media #{$small-and-down} {
+          font-size: 1.75rem;
         }
       }
-      .menu-wrapper {
-        .menu-title {
-          font-size: 16px;
-          font-weight: bold;
-        }
-        .menu-type {
-          & > li {
-            padding: $padding-xs-3 $padding-xs;
-            //height:30px;
-            //line-height:30px;
-            & > a {
-              color: $blue-grey-darken-4;
-              transition: color $transition-timer;
-              cursor: pointer;
-              &:hover {
-                text-decoration: underline;
-                color: $teal-lighten-1;
-              }
-            }
-            & > span {
-              margin-left: $margin-xs-2;
-            }
-          }
-        }
-        .menu-recent {
-          & > li {
 
-          }
+      .item-author {
+        padding-top: $padding-xs;
+        color: $assist-color;
+        //<993px
+        @media #{$medium-only}{
+          font-size: 1rem;
         }
-        .menu-hotlabel {
-          a {
-            display: inline-block;
-            border: 1px solid $grey-lighten-2;
-            color: $grey;
-            padding: $padding-xs-3 $padding-xs-2;
-            margin: $margin-xs-2 $margin-xs $margin-xs-2 0;
-            font-size: 12px;
-            cursor: pointer;
-            transition: $transition-timer color, $transition-timer background;
-            &:hover {
-              background: $teal-lighten-1;
-              color: $white;
-            }
-          }
+        @media #{$small-and-down}{
+          font-size: 1.25rem;
+        }
+
+        span {
+          margin-right: $margin-xs;
+        }
+      }
+      .item-desc {
+        text-indent: 2em;
+        text-align: justify;
+        font-size: 14px;
+        line-height: 1.75;
+        color: $content-color;
+        @media #{$medium-only}{
+          font-size: 1.1rem;
+        }
+        @media #{$small-and-down}{
+          font-size: 1.25rem;
+        }
+      }
+      .item-info {
+        font-size: 14px;
+        color: $assist-color;
+        span {
+          margin-left: $margin-xs;
+        }
+        a {
+          margin-left: $margin-xs-2;
+        }
+        @media #{$medium-only}{
+          font-size: 1rem;
+        }
+        @media #{$small-and-down}{
+          font-size: 1.25rem;
         }
       }
     }
   }
+
 }
