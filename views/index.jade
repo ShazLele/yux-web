@@ -37,22 +37,30 @@ block content
                                             a(href='#') gulp
                                             a /
                                             a(href='#') 构建工具
-                    aside.col.l3.hide-on-med-and-down.main-slide
-                        ul.slide-main
+                    aside.col.l3.hide-on-med-and-down.main-aside
+                        div.search-wrapper
+                            input#search
+                            i.fa.fa-search
+
+                        ul.menu-wrapper
                             li
-                                p.main-title 分类目录
-                                ul.main-type
+                                p.menu-title 分类目录
+                                ul.menu-type
                                     li
                                         a js
+                                        span (10)
                                     li
                                         a css
+                                        span (11)
                                     li
                                         a node
+                                        span (22)
                                     li
                                         a angular
+                                        span (30)
                             li
-                                p.main-title 近期文章
-                                ul.main-recent
+                                p.menu-title 近期文章
+                                ul.menu-recent.menu-type
                                     li
                                         a nodejs基础教程
                                     li
@@ -62,8 +70,8 @@ block content
                                     li
                                         a 一起学习react
                             li
-                                p.main-title 热门标签
-                                div
+                                p.menu-title 热门标签
+                                div.menu-hotlabel
                                     -var num=['js','css','nodejs','react','angularjs'];
                                     for i in num
                                         a 标签#{i}
