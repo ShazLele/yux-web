@@ -1,0 +1,28 @@
+doctype html
+html
+    head
+        meta(charset='UTF-8')
+        meta(name='viewport',content='width=device-width,initail-scale=1')
+        title= title
+        link(rel='stylesheet',href='/components/Materialize/dist/css/materialize.css')
+        link(rel='stylesheet',href='/components/font-awesome-4.6.3/css/font-awesome.css')
+        link(rel='stylesheet',href='/css/yux-ui.css')
+        link(rel='stylesheet',href='/css/login.css')
+    body.view-login
+        div.fullscreen
+            div.hide-on-small-and-down.left-container
+            div.center-container.container
+                div.row
+                    div.login-form.col.l6.m8.s12.offset-l3.offset-m2
+                        div.input-field
+                            input#email(type='text')
+                            label(for='email') 邮箱
+                        div.input-field
+                            input#password(type='text')
+                            label(for='password') 密码
+                        div.input-group
+                            button#loginBtn.btn.teal 登录
+            div.hide-on-small-and-down.right-container
+        script(src='/components/jquery/dist/jquery.min.js')
+        script(src='/components/Materialize/dist/js/materialize.min.js')
+        script(src='/js/login.js')

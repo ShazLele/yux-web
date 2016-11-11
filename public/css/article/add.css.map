@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AAMI,iDAAU;EACR,KAAK,EAAE,IAAI;AAKf,+BAAc;EACZ,UAAU,ECZE,IAAI",
+"sources": ["../../sass/article/add.scss","../../sass/_var.scss"],
+"names": [],
+"file": "add.css"
+}

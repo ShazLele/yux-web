@@ -1,0 +1,72 @@
+extends ../layout
+block css
+    link(rel='stylesheet',href='/css/article/detail.css')
+block content
+    div.view-article-detail
+        h5.center-align.article-title= article.title
+        div.center-align.article-info
+            a= article.nickname
+            span 发表于: #{article.addtime.toString().split('GMT')[0]}
+            span 分类:
+                a(href='#') javascript
+            span 阅读(#{article.reading})
+            span 评论
+                a(href='#comments') (100)
+        div.article-desc
+            p.yux-title
+                span 简介:
+            p #{article.desc}
+        div.article-content
+            | !{article.content}
+        div.grey.lighten-5.article-support
+            h5 I know you like it,Thanks for reading!
+            button.btn.teal 测试按钮
+        div.article-pre-after
+            div.left
+                i.fa.fa-arrow-left
+                a 这是一篇神奇的文章
+            div.right
+                a 这也是一篇神奇的文章
+                i.fa.fa-arrow-right
+        div.article-options
+            div.row
+                div.col.m2.s12
+                    p.right-align 温馨提示
+                div.col.m10.s12
+                    span.
+                        本站文章除注明转载外，均为原创文章，
+                        会经常更新知识点以及修正一些错误，
+                        因此转载请保留原出处，方便溯源，
+                        避免陈旧错误知识的误导，同时有更好的阅读体验。
+            div.row
+                div.col.m2.s12
+                    p.right-align 转载链接
+                div.col.m10.s12
+                    a(href='/article/detail/#{article._id}')= 'http://123.57.136.97:3010/article/detail/' + article._id
+                    i.fa.fa-copy 复制
+
+        div.article-share
+            span 分享到：
+            a.fa.fa-qq
+            a.fa.fa-weixin
+            a.fa.fa-weibo
+
+        div#comments.article-comments
+            div.comments-menu
+                p.left.list-title
+                    | 71条评论
+                    span (
+                    a 按时间排序
+                    a 按评论排序
+                    a 按喜欢排序
+                    span )
+                p.right
+
+                    a
+                        i.fa.fa-pencil-square-o
+                        | 我要评论
+            div.input-field#comment-module1
+                textarea#input-comments.materialize-textarea
+                label(for='input-comments') 对 #{article.nickname} 吐槽：
+block javascript
+    script(src='/js/article/detail.js')

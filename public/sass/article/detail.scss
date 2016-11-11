@@ -1,0 +1,120 @@
+@import "../_part/color";
+@import "../_part/media";
+@import "../_part/var";
+
+$border-width-normal: 2px;
+.view-article-detail {
+
+  .article-title {
+    margin-top: $margin-lg;
+    margin-bottom: $margin-normal;
+  }
+  .article-desc {
+    margin-top: $margin-xs-2;
+    border-bottom: $border-width-normal solid $assist-border;
+    p {
+      text-indent: 2em;
+      text-align: justify;
+      word-break: break-all;
+    }
+    p:nth-child(1) {
+      text-indent: 0;
+    }
+
+  }
+  .article-info {
+    color: $assist-color;
+    padding-bottom: $padding-normal;
+    border-bottom: $border-width-normal solid $assist-border;
+    & > span {
+      margin: 0 $margin-xs-2;
+      a {
+        margin-left: $margin-xs-2;
+      }
+    }
+    & > a {
+      margin: 0 $margin-xs-2;
+    }
+  }
+  .article-content {
+    padding-bottom: $padding-normal;
+    border-bottom: 4px solid $assist-border;
+    img {
+      max-width: 100%;
+    }
+  }
+  .article-support {
+    padding: $padding-normal;
+    h5 {
+      padding-bottom: $padding-xs;
+    }
+  }
+  .article-pre-after {
+    padding: $padding-lg 0;
+    overflow: hidden;
+    a {
+      margin: 0 $margin-xs-2;
+    }
+  }
+  .article-options {
+    border: $border-width-normal dashed $assist-border;
+    padding: $padding-lg $padding-xs $padding-xs 0;
+    .row {
+      &:nth-child(2) {
+        margin-top: $margin-xs;
+      }
+      p {
+        margin: 0;
+      }
+      a {
+        border-bottom: $border-width-normal dashed $assist-border;
+        + i {
+          margin-left: $margin-xs-2;
+          cursor: pointer;
+          font-weight: 600;
+          transition: color $transition-timer;
+          &:hover {
+            color: $a-active-color;
+          }
+        }
+      }
+    }
+  }
+  .article-share {
+    padding: $padding-lg 0;
+    span {
+      font-size: $font-size-normal;
+      font-weight: 600;
+    }
+    a {
+      margin-left: $margin-xs;
+      font-size: $font-size-lg-2;
+    }
+
+  }
+
+  .article-comments {
+    .comments-menu {
+      margin-bottom: $margin-lg;
+      border-bottom: 1px solid $assist-border;
+      border-top: 1px solid $assist-border;
+      font-size: $font-size-xs;
+      overflow: hidden;
+      p {
+        &:nth-child(1) {
+          span {
+            margin-left: $margin-xs;
+          }
+          a {
+            margin-left: $margin-xs;
+          }
+        }
+        a {
+          i {
+            margin-right: $margin-xs-3;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,9 +1,17 @@
-@import "color";
-@import "media";
-@import "var";
+@import "_part/color";
+@import "_part/media";
+@import "_part/var";
 
 .view-header {
   background: $white;
+  nav {
+    .brand-logo {
+      font-size: 1.5rem;
+      i{
+        margin-right:$margin-xs-2;
+      }
+    }
+  }
   .header-nav {
     margin-left: 80px;
   }
@@ -13,6 +21,7 @@
 
   margin-top: $margin-normal;
   .layout-main {
+
     .main-aside {
       background: $grey-lighten-4;
       padding: 0 $padding-normal;
@@ -48,16 +57,12 @@
         }
         .menu-type {
           & > li {
-            padding: $padding-xs-3 $padding-xs;
+            padding: $padding-xs-3 0 $padding-xs-3 $padding-normal;
+            //font-size: $font-size-xs;
             & > span {
               margin-left: $margin-xs-2;
               color: $assist-color;
             }
-          }
-        }
-        .menu-recent {
-          & > li {
-
           }
         }
         .menu-hotlabel {
@@ -77,6 +82,12 @@
         }
       }
     }
+
+    @media #{$medium-and-up}{
+      .main-content {
+        padding: $padding-lg;
+      }
+    }
   }
 
 }
@@ -92,4 +103,5 @@
     color: $black;
   }
 }
+
 

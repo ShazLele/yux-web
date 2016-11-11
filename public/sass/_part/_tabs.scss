@@ -1,0 +1,23 @@
+@import "color";
+@import "media";
+@import "var";
+
+.tabs.tabs-grey {
+  .tab {
+    a {
+      color: $tabs-grey-color;
+      &:hover {
+        color: $tabs-grey-color-hover;
+      }
+
+    }
+    &.disabled {
+      a {
+        color: $tabs-grey-color-disabled;
+      }
+    }
+  }
+  .indicator {
+    background-color: $tabs-grey-color-indicator;
+  }
+}

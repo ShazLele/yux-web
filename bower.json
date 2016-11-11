@@ -1,0 +1,23 @@
+{
+  "name": "yux-web",
+  "description": "",
+  "main": "",
+  "authors": [
+    "qiumohanyu <qiumohanyu>"
+  ],
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "./public/components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "Materialize": "materialize#^0.97.6",
+    "jquery": "^3.1.1",
+    "wangEditor": "^2.1.22"
+  }
+}

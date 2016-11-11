@@ -8,74 +8,17 @@ html
         link(rel='stylesheet',href='/components/font-awesome-4.6.3/css/font-awesome.css')
         link(rel='stylesheet',href='/css/yux-ui.css')
         block css
-    body.grey.lighten-3
-        -var menus=[{url:'/index',title:'首页'},{url:'/article/list',title:'文章列表'}];
-        div.view-header
-            nav.nav-white
-                div.nav-wrapper
-                    div.container
-                        div.row
-                            div.col-xs-12
-                                a.brand-logo(href='#') YuX
-                                    a.button-collapse(data-activates='mobile-nav')
-                                        i.fa.fa-bars
-                                    ul.hide-on-med-and-down.header-nav
-                                        each item in menus
-                                            li
-                                                a(href="#{item.url}") #{item.title}
-                                    ul.side-nav#mobile-nav
-                                        each item in menus
-                                            li
-                                                a(href='#{item.url}') #{item.title}
-
+    body.blue-grey.lighten-5
+        include _part/_header
         div.view-layout
             div.layout-main
                 div.container
                     div.row
                         div.col.l9.m12.white.main-content
                             block content
-                        aside.col.l3.hide-on-med-and-down.main-aside
-                            div.search-wrapper
-                                input#search
-                                i.fa.fa-search
-
-                            ul.menu-wrapper
-                                li
-                                    p.menu-title 分类目录
-                                    ul.menu-type
-                                        li
-                                            a js
-                                            span (10)
-                                        li
-                                            a css
-                                            span (11)
-                                        li
-                                            a node
-                                            span (22)
-                                        li
-                                            a angular
-                                            span (30)
-                                li
-                                    p.menu-title 近期文章
-                                    ul.menu-recent.menu-type
-                                        li
-                                            a nodejs基础教程
-                                        li
-                                            a 快速入门angular
-                                        li
-                                            a 你不知道的es6
-                                        li
-                                            a 一起学习react
-                                li
-                                    p.menu-title 热门标签
-                                    div.menu-hotlabel
-                                        -var num=['js','css','nodejs','react','angularjs'];
-                                        for i in num
-                                            a 标签#{i}
-
-        footer.view-footer.page-footer.blue-grey.darken-3
-            div.container
-                div.row
-                    div.l6.s12
-                        h5.white-text Footer Content
-            div.footer-copyright.blue-grey.darken-4
+                        include _part/_aside
+        include _part/_footer
+        script(src='/components/jquery/dist/jquery.min.js')
+        script(src='/components/Materialize/dist/js/materialize.min.js')
+        script(src='/js/layout.js')
+        block javascript

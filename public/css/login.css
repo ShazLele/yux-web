@@ -1,0 +1,39 @@
+.view-login .fullscreen {
+  background: url(/images/login/bg-1.jpg) no-repeat fixed center;
+  background-size: cover;
+  position: absolute;
+  width: 100%;
+  height: 100%; }
+  .view-login .fullscreen > div {
+    position: absolute;
+    height: 100%; }
+  .view-login .fullscreen .left-container {
+    width: 30%;
+    left: 0; }
+    @media only screen and (min-width: 601px) and (max-width: 992px) {
+      .view-login .fullscreen .left-container {
+        width: 20%; } }
+  .view-login .fullscreen .center-container {
+    width: 55%;
+    right: 15%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 20px;
+    background-color: #fff; }
+    @media only screen and (min-width: 601px) and (max-width: 992px) {
+      .view-login .fullscreen .center-container {
+        width: 70%;
+        right: 10%; } }
+    @media only screen and (max-width: 600px) {
+      .view-login .fullscreen .center-container {
+        right: 0;
+        width: 100%; } }
+  .view-login .fullscreen .right-container {
+    width: 15%;
+    right: 0; }
+    @media only screen and (min-width: 601px) and (max-width: 992px) {
+      .view-login .fullscreen .right-container {
+        width: 10%; } }
+
+/*# sourceMappingURL=login.css.map */

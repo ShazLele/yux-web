@@ -1,0 +1,51 @@
+@import "_part/color";
+@import "_part/media";
+@import "_part/var";
+
+$bgImg-left: url(/images/login/bg-1.jpg);
+//$bgImg-right: url(/images/login/bg-2.jpg);
+.view-login {
+  .fullscreen {
+    background: $bgImg-left no-repeat fixed center;
+    background-size: cover;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    > div {
+      position: absolute;
+      height: 100%;
+    }
+    .left-container {
+      width: 30%;
+      left: 0;
+      @media #{$medium-only} {
+        width: 20%;
+      }
+    }
+    .center-container {
+      width: 55%;
+      right: 15%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: $padding-normal;
+      background-color: #fff;
+      @media #{$medium-only} {
+        width: 70%;
+        right: 10%;
+      }
+      @media #{$small-and-down}{
+        right: 0;
+        width: 100%;
+      }
+    }
+    .right-container {
+      width: 15%;
+      right: 0;
+      @media #{$medium-only} {
+        width: 10%;
+      }
+    }
+  }
+
+}

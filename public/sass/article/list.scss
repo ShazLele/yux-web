@@ -1,0 +1,110 @@
+@import "../_part/color";
+@import "../_part/media";
+@import "../_part/var";
+
+
+.article-list {
+  .list-title {
+    border-bottom: 2px solid $horizontal-color;
+    position: relative;
+    &:before {
+      content: '';
+      position: absolute;
+      bottom: -2px;
+      display: inline-block;
+      width: 100px;
+      height: 3px;
+      background: $title-border;
+    }
+  }
+  .list-item {
+    padding-top: $padding-xs;
+    padding-bottom: $padding-xs;
+    border-bottom: 2px solid $horizontal-color;
+    .item-title {
+      font-weight: bolder;
+      font-size: 18px;
+      color: $title-normal;
+      &:hover {
+        color: $a-active-color;
+      }
+      //<993px
+      @media #{$medium-only}{
+        font-size: 1.45rem;
+      }
+      //<661px
+      @media #{$small-and-down} {
+        font-size: 1.75rem;
+      }
+    }
+
+    .item-author {
+      padding-top: $padding-xs;
+      color: $assist-color;
+      //<993px
+      @media #{$medium-only}{
+        font-size: 1rem;
+      }
+      @media #{$small-and-down}{
+        font-size: 1.25rem;
+      }
+
+      span {
+        margin-right: $margin-xs;
+      }
+    }
+    .item-desc {
+
+      text-align: justify;
+      font-size: 14px;
+      line-height: 1.75;
+      color: $content-color;
+      //p {
+      //  text-indent: 2em;
+      //}
+      @media #{$medium-only}{
+        font-size: 1.1rem;
+        p {
+          font-size: 1.1rem;
+        }
+      }
+      @media #{$small-and-down}{
+        font-size: 1.25rem;
+        p {
+          font-size: 1.25rem;
+        }
+      }
+    }
+    .item-info {
+      font-size: 14px;
+      color: $assist-color;
+
+      span {
+        margin-left: $margin-xs;
+      }
+      div {
+        display: inline-block;
+        a {
+          margin-left: $margin-xs-2;
+        }
+      }
+
+      @media #{$medium-only}{
+        font-size: 1rem;
+      }
+      @media #{$small-and-down}{
+        font-size: 1.25rem;
+        div {
+          display: block;
+          text-align: left;
+          font-size: 1.2rem;
+          padding-top: $padding-xs-3;
+          a {
+            padding: $padding-xs-4 $padding-xs;
+            border: 1px solid $assist-border;
+          }
+        }
+      }
+    }
+  }
+}

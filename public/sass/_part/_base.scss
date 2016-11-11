@@ -1,0 +1,36 @@
+@import "color";
+@import "media";
+@import "var";
+
+html, body {
+  font-family: '微软雅黑', Consolas, 'Liberation Mono', Menlo, Courier, monospace;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  //font-size: 12px;
+}
+
+.yux-title {
+  font-weight: 600;
+  font-size: $font-size-lg;
+  text-indent: 0;
+  @media #{$small-and-down}{
+    font-size: 1.4rem;
+  }
+}
+
+.yux-title-border {
+  border-bottom: 2px solid $assist-border;
+  span {
+    position: relative;
+    &:before {
+      content: '';
+      position: absolute;
+      bottom: -5px;
+      width: 100%;
+      height: 1px;
+      border-bottom: 3px solid $title-border;
+    }
+  }
+}

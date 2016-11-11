@@ -1,0 +1,30 @@
+extends ../layout
+block css
+    link(rel='stylesheet',href='/components/wangEditor/dist/css/wangEditor.min.css')
+    link(rel='stylesheet',href='/css/article/add.css')
+    style.
+        #div1 {
+            width: 100%;
+            height: 400px;
+        }
+block content
+    div.view-article-add
+        div.row
+            div.col.s12
+                div.input-field.article-title
+                    input#title(type='text')
+                    label(for='title') 文章标题
+                div.input-field.article-title
+                    textarea#desc.materialize-textarea
+                    label(for='desc') 文章描述
+                div#div1
+                    p
+                div.article-save.right-align
+                    button#submitBtn.btn.teal 发布
+
+
+block javascript
+    script(src='/components/wangEditor/dist/js/wangEditor.min.js')
+    script(src='/js/article/add.js')
+
+
