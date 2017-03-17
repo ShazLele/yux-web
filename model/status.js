@@ -1,10 +1,11 @@
 /**
  * Created by Stone on 2016/4/18.
  */
+"use strict";
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 var Status = new Schema({
-    type: Number,//1 Õý³£ -1 É¾³ý 2 ÉóºËÖÐ
+    type: Number,//1 ï¿½ï¿½ï¿½ï¿½ -1 É¾ï¿½ï¿½ 2 ï¿½ï¿½ï¿½ï¿½ï¿½
     name: String,
     desc: String
 });

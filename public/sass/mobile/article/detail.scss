@@ -1,0 +1,15 @@
+@import "../../_part/_color";
+@import "../../_part/_var";
+
+.view-article-detail {
+  display: inline-block;
+  width: 100%;
+  padding: $padding-xs;
+  .article-title {
+    margin: $margin-normal 0;
+  }
+  img {
+    width: auto !important;
+    height: auto !important;
+  }
+}

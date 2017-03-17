@@ -1,0 +1,25 @@
+extends ../layout.login
+block css
+block left
+    p.left-title 或许被嘲弄
+    p.left-content 但执着依然不变！
+    div
+        a(href='/register').waves-effect.btn.red.lighten-2 去注册
+block right
+    div.center-title
+        h2.teal-text.text-lighten-2 语巷
+        h5.teal-text.text-lighten-2 程序员的一天天
+    div.main-form
+        div#sendContainer
+            div.input-field
+                input#email(type='email')
+                label(for='email') 邮箱
+            div.input-group
+                button#sendCodeBtn.waves-effect.btn.teal 发送验证码
+        div#resContainer.input-field.hide
+            h5.teal-text.center-align
+                | 重置链接已发送至你的邮箱
+                i.fa.fa-check
+
+block script
+    script(src='/js/pwd/forget.js')

@@ -1,0 +1,71 @@
+.view-category {
+  width: 100% !important;
+  display: flex;
+  height: 100%; }
+  .view-category .category-left {
+    float: left;
+    width: 30%;
+    border-right: 1px solid #009688; }
+    .view-category .category-left .collection {
+      border: 0;
+      height: 100%; }
+      .view-category .category-left .collection .collection-item {
+        cursor: pointer;
+        overflow: hidden;
+        border: 0;
+        transition: height 0.4s;
+        height: 41px; }
+        .view-category .category-left .collection .collection-item.active {
+          background: #26a69a;
+          transition-delay: 0.4s;
+          height: 91px; }
+        .view-category .category-left .collection .collection-item i {
+          transition: all 0s; }
+      .view-category .category-left .collection .level-add {
+        position: absolute;
+        opacity: 0;
+        height: 0;
+        padding-top: 0;
+        cursor: default;
+        transition: all 0.25s; }
+        .view-category .category-left .collection .level-add.shown {
+          opacity: 1;
+          height: 100%; }
+        .view-category .category-left .collection .level-add .btn-flat {
+          border: 1px solid #bdbdbd;
+          height: auto; }
+  .view-category .category-right {
+    float: left;
+    width: 30%; }
+    .view-category .category-right .collection {
+      border: 0;
+      height: 100%; }
+      .view-category .category-right .collection .collection-item {
+        cursor: pointer;
+        overflow: hidden;
+        border: 0;
+        transition: height 0.4s;
+        height: 41px; }
+        .view-category .category-right .collection .collection-item.active {
+          background: #ff9e80;
+          transition-delay: 0.4s;
+          height: 91px; }
+        .view-category .category-right .collection .collection-item i {
+          transition: all 0s; }
+      .view-category .category-right .collection .level-add {
+        position: absolute;
+        opacity: 0;
+        height: 0;
+        padding-top: 0;
+        cursor: default;
+        transition: all 0.25s; }
+        .view-category .category-right .collection .level-add.shown {
+          opacity: 1;
+          height: 100%; }
+        .view-category .category-right .collection .level-add .btn-flat {
+          border: 1px solid #bdbdbd;
+          height: auto; }
+    .view-category .category-right .secondary-content {
+      color: #ff9e80; }
+
+/*# sourceMappingURL=index.css.map */

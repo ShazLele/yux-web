@@ -2,6 +2,13 @@ extends ../layout
 block css
     link(rel='stylesheet',href='/css/article/list.css',async)
 block content
-    div.row.article-list
+    div#articleList.article-list
         include ../_part/_article/_list
+    div.show-more
+        if articleList && articleList.length >= 10
+            button#showMore.btn 加载更多
+        else if !articleList || articleList.length <= 0
+            span.btn-flat.disabled 暂无数据
+        span#hasEnd.btn-flat.hide.disabled 已到底部
 block javascript
+    script(src='/js/article/list.js')

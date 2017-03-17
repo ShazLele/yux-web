@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div>
+    <h2>当前用户:<span id="cj_currentUser"></span></h2>
+    <a id="cj_login">点击登录</a>
+    <a id="cj_logout">退出</a>
+
+</div>
+<h2><span>剩余抽奖次数：</span><span id="cj_count">1</span></h2>
+<button id="cj_btn">抽奖</button>
+<script>
+
+    refreshCount();
+    refreshUser();
+    document.querySelector("#cj_btn").onclick = function () {
+        var count = localStorage.getItem("cjCount");
+        var newCount = 0;
+        if (count !== null) {
+            newCount = Math.max(count - 1, 0);
+        } else {
+            newCount = 2;
+        }
+        localStorage.setItem('cjCount', newCount);
+        refreshCount();
+    }
+    document.querySelector("#cj_login").onclick = function () {
+        localStorage.setItem("user", '你妹');
+        refreshUser();
+        refreshCount();
+    }
+    document.querySelector("#cj_logout").onclick = function () {
+        localStorage.removeItem("user");
+        refreshUser();
+        refreshCount();
+    }
+
+    function refreshCount() {
+        var count = localStorage.getItem("cjCount");
+        var user = localStorage.getItem("user");
+        var showCount = 1;
+
+        if (count === null) {
+            if (!user) {
+                showCount = 1;
+            } else {
+                showCount = 3;
+            }
+            localStorage.setItem("cjCount", 3);
+        }
+        else {
+            if (user) {
+                showCount = Math.max(count, 0);
+            } else {
+                showCount = Math.max(count - 2, 0);
+            }
+        }
+
+        document.querySelector("#cj_count").innerHTML = showCount.toString();
+    }
+    function refreshUser() {
+        var user = localStorage.getItem("user");
+        document.querySelector("#cj_currentUser").innerHTML = user ? user : '游客';
+    }
+
+</script>
+</body>
+</html>

@@ -1,63 +1,75 @@
 /**
  * Created by Stone on 2016/4/17.
  */
-var moment = require('moment'),
-    CommonModel = require('../model/common'),
-    UserDal = require('../dal/user');
+"use strict";
+var UserDal = require('../dal/user');
 
-var resmodel = new CommonModel.ResultModel();
-
-exports.addUser = function(user, callback) {
+exports.addUser = function (user) {
     !user.nickname && (user.nickname = '佚名');
+    user.role = 2;
     //先查询
-    UserDal.findOne({ email: user.email }, function(res) {
-        if (res.obj) {
-            callback(resmodel.setError('用户已存在').toJson());
-        }
-        else {
-            UserDal.create(user, function(res) {
-                callback(res);
-            });
-        }
-    });
-
-};
-
-exports.find = function(user, callback) {
-    var fields = null;//查询所有的列
-    var sort = { sort: { 'updatetime': -1 } };
-    UserDal.find(user, fields, sort, function(res) {
-        callback(res.err, res.docs);
-    });
-};
-
-exports.getUserForLogin = function(user, callback) {
-
-    UserDal.findOne(user, function(res) {
-        if (res && res.isSuccess && res.obj) {
-            res.obj.password = '';
-            var updatecols = {};
-            if (res.obj.addtime) {
-                res.obj.addtime = updatecols.addtime = new Date();
+    return UserDal.findOne({$or: [{email: user.email}, {nickname: user.nickname}]}, null)
+        .then(doc=> {
+            if (doc) {
+                return new Promise((resolve, reject)=> {
+                    reject('用户已存在');
+                })
             }
-            res.obj.lastlogintime = updatecols.lastlogintime = new Date();
-            UserDal.update(res.obj, updatecols);
-        }
-        callback(res);
-    });
+            else {
+                return UserDal.create(user);
+            }
+        });
 };
 
-exports.findUserID = function(user, callback) {
-    UserDal.findOne(user, function(res) {
-        callback(res);
-    });
+exports.addWXUser = function (user) {
+    !user.nickName ? (user.nickname = '佚名') : user.nickname = user.nickName;
+    user.role = 2;
+    //先查询
+    return UserDal.findOne({third: user.third, account: user.account}, null)
+        .then(doc=> {
+            if (doc) {
+                return new Promise((resolve, reject)=> {
+                    reject('用户已存在');
+                })
+            }
+            else {
+                return UserDal.create(user);
+            }
+        });
+    ;
 };
 
-exports.updateUserInfo = function(userid, updatecol, callback) {
-    var user = { _id: userid };
-    UserDal.update(user, updatecol, function(res) {
-        callback(res);
-    });
+exports.find = function (user) {
+
+    var sort = {sort: {'updatetime': -1}};
+    return UserDal.find(user, null, sort);
+};
+
+exports.getUserForLogin = function (user) {
+    const fields = '_id email nickname desc addtime updatetime lastlogintime status role account avatarUrl';
+    return UserDal.findOne(user, fields)
+        .then(obj=> {
+            console.log(obj);
+            if (obj && obj.status >= 1) {
+                var updatecols = {};
+                obj.lastlogintime = updatecols.lastlogintime = new Date();
+                UserDal.update(obj, updatecols);
+            }
+            return obj;
+        });
+};
+
+exports.findUserID = function (user) {
+    return UserDal.findOne(user, null);
+};
+
+exports.deleteByID = function (id) {
+    return UserDal.delete(id)
+}
+
+exports.updateUserInfo = function (userId, updateCol) {
+    var user = {_id: userId};
+    return UserDal.update(user, updateCol);
 };
 
 

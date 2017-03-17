@@ -1,69 +1,45 @@
 /**
  * Created by Stone on 2016/4/18.
  */
-var db = require('../model'),
-    CommonModel = require('../model/common');
-var resmodel = new CommonModel.ResultModel();
+"use strict";
+var db = require('../model');
 
-exports.create = function(article, callback) {
-    db.Article.create(article, function(err) {
-        if (err) {
-            resmodel.setError(err);
-        } else {
-            resmodel.init();
-        }
-        callback(resmodel.toJson());
-    });
+exports.create = function (info) {
+    return db.Article.create(info);
 };
-exports.delete = function(article, callback) {
-    db.Article.remove(article, function(err) {
-        resmodel.init();
-        if (err) {
-            resmodel.setError(err);
-        }
-        callback(resmodel.toJson());
-    });
+exports.delete = function (info) {
+    return db.Article.remove(info);
 };
-exports.findPage = function(article, fields, sort, pageIndex, pageSize, callback) {
-    db.Article.find(article, fields, sort, function(err, docs) {
-        if (err) {
-            resmodel.setError(err);
-        } else {
-            resmodel.setList(docs);
-        }
-        callback(resmodel.toJson());
-    }).skip((pageIndex - 1) * pageSize).limit(pageSize);
+exports.findPage = function (info, fields, sort, pageIndex, pageSize) {
+    //先查询分类
+    return db.Article
+        .find(info, fields, sort)
+        .populate('category', '_id name')
+        .populate('comments', '_id')
+        .populate('user', '_id nickname')
+        .skip((pageIndex - 1) * pageSize)
+        .limit(pageSize);
+
 };
-exports.find = function(article, fields, sort, callback) {
-    db.Article.find(article, fields, sort, function(err, docs) {
-        if (err) {
-            resmodel.setError(err);
-        } else {
-            resmodel.setList(docs);
-        }
-        callback(resmodel.toJson());
-    });
+exports.find = function (info, fields, sort) {
+    return db.Article
+        .find(info, fields, sort)
+        .populate('category', '_id name')
+        .populate('comments', '_id')
+        .populate('user', '_id nickname');
 };
-exports.findById = function(id, callback) {
-    db.Article.findById(id, function(err, doc) {
-        if (err) {
-            resmodel.setError(err);
-        } else {
-            resmodel.setObj(doc);
-        }
-        callback && callback(resmodel.toJson());
-    });
+exports.findById = function (id) {
+    return db.Article
+        .findById(id)
+        .populate('category', '_id name')   //字段名
+        .populate('comments')
+        .populate('user', '_id email nickname');
+
 };
-exports.update = function(article, updatecol, callback) {
-    updatecol = { $set: updatecol };
-    db.Article.update(article, updatecol, function(err) {
-        if (err) {
-            resmodel.setError(err);
-        } else {
-            resmodel.init();
-        }
-        callback && callback(resmodel.toJson());
-    });
+exports.update = function (info, updatecol) {
+    updatecol = {$set: updatecol};
+
+    return db.Article.update(info, updatecol);
 };
 
 

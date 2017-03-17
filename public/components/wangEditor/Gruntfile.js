@@ -15,7 +15,7 @@ module.exports = function(grunt) {
       },
       build: {
         src: 'src/js/<%=pkg.name%>.js',
-        dest: 'dist/js/<%=pkg.name%>.min.js'
+        dest: 'build/js/<%=pkg.name%>.min.js'
       }
     },
 
@@ -35,7 +35,7 @@ module.exports = function(grunt) {
       },
       build: {
         src: 'src/css/<%=pkg.name%>.css',
-        dest: 'dist/css/<%=pkg.name%>.min.css'
+        dest: 'build/css/<%=pkg.name%>.min.css'
       }
     },
 
@@ -68,7 +68,7 @@ module.exports = function(grunt) {
             expand: true, 
             flatten: true,
             src: ['src/js/*.js'], 
-            dest: 'dist/js/', 
+            dest: 'build/js/',
             filter: 'isFile'
           },
           //less
@@ -76,7 +76,7 @@ module.exports = function(grunt) {
             expand: true, 
             flatten: true,
             src: ['src/css/*.less'], 
-            dest: 'dist/css/', 
+            dest: 'build/css/',
             filter: 'isFile'
           },
           //css
@@ -84,7 +84,7 @@ module.exports = function(grunt) {
             expand: true, 
             flatten: true,
             src: ['src/css/*.css'], 
-            dest: 'dist/css/', 
+            dest: 'build/css/',
             filter: 'isFile'
           }
         ]

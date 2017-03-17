@@ -1,17 +1,25 @@
-each article,index in articleList
-    div.col.s12.list-item
-        a.item-title(href='/article/detail/#{article._id}')= article.title
-        div.item-author
-            span= article.nickname
-            span 发表于
-            span= article.addtime.toString().split('GMT')[0]
-        div.item-desc #{article.desc}
+each article in articleList||[]
+    div.list-item
+        div.item-header
+            a.item-title(target='_blank',href='/article/detail/#{article._id}')= article.title
+            div.item-author
+                span= article.user ? article.user.nickname : '获取失败'
+                span 发表于
+                span= article.addtime.toString().split('GMT')[0]
+        div.item-content
+            div.item-right
+                div.article-wallpic(style="background-image:url('http://www.moguiweb.com.cn#{article.wallpic}')")
+                    //img(src="http://www.moguiweb.com.cn#{article.wallpic}")
+            div.item-main
 
-        div.right-align.item-info
-            span 阅读(#{article.reading})
-            span 评论(10)
-            div
-                span.hide-on-small-and-down 分类:
-                a(href='#') javascript
-                //a.hide-on-small-and-down /
-                //a(href='#') js集合
+                div.item-desc #{article.desc}
+                div.right-align.item-info
+                    span 阅读(#{article.reading})
+                    span 评论
+                        a(target='_blank',href='/article/detail/#{article._id}#comments') (#{(article.comments && article.comments.length) || 0})
+                    div
+                        span 分类:
+                        a(href='/article/list/#{article.column || 1}/#{article.category && article.category._id}') #{(article.category && article.category.name) || '暂无'}
+                        //a.hide-on-small-and-down /
+                        //a(href='#') js集合
+

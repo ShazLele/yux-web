@@ -56,7 +56,7 @@
 
  - 确定本机安装了 `nodejs`，可使用 `node -v` 验证
  - 下载源码、解压，或者 `git clone https://github.com/wangfupeng1988/wangEditor.git` 。**注意，`windows`系统必须下载到`C盘`运行**
- - 进入源码目录，找到 `server.js` 命令行中运行 `node server.js`
+ - 进入源码目录，找到 `webpack.server.js` 命令行中运行 `node webpack.server.js`
  - 打开浏览器访问 `http://localhost:8011/test/index.html`
 
 # 5. 交流

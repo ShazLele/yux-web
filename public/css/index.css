@@ -8,9 +8,12 @@
     justify-content: center;
     text-align: center;
     font-size: 5rem; }
+    .view-index .index-ad div img {
+      max-width: 100%;
+      max-height: 100%; }
     .view-index .index-ad div p {
       display: inline-block;
-      font-size: 3rem; }
+      font-size: 2rem; }
     .view-index .index-ad div i {
       position: absolute; }
       .view-index .index-ad div i:nth-child(1) {

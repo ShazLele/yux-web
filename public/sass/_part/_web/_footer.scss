@@ -1,0 +1,15 @@
+@import "../_var";
+@import "../_color";
+
+.view-footer {
+  background: $gray-footer;
+  color: $white;
+  min-width: $main-width;
+  padding-left:$padding-normal;
+  .footer-main {
+    min-width: $main-width;
+    max-width: $max-main-width;
+    margin: auto;
+    padding-bottom: $padding-normal;
+  }
+}

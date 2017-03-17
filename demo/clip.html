@@ -1,0 +1,31 @@
+<html>
+<title>获取选中文本</title>
+<script src="../public/components/jquery/dist/jquery.js"></script>
+<script src="../public/components/clipboard/dist/clipboard.min.js"></script>
+<body>
+<p tabindex="100" id="foo">
+    这里是以在IE中获取用户选择的Range用 var selectedText = document.selection.createRange();
+    这时得到的是Object对象，要获取用户选中的文本 selectedText = selectedText.text; 在FF、Safari、Opera、
+    Chrome等W3C标准浏览器中获取用户选择的Range很简单： var selectedText = window.getSelection();
+</p>
+
+<button class="btn" data-clipboard-target="#foo">复制</button>
+<textarea cols="100" rows="40"></textarea>
+<script type="text/javascript">
+    var clipboard = new Clipboard('.btn');
+
+    //可以自己加些处理
+    clipboard.on('success', function(e) {
+        console.info('Action:', e.action);
+        console.info('Text:', e.text);
+        console.info('Trigger:', e.trigger);
+
+        e.clearSelection();
+    });
+    clipboard.on('error', function(e) {
+        console.error('Action:', e.action);
+        console.error('Trigger:', e.trigger);
+    });
+</script>
+</body>
+</html>

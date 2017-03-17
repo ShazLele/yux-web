@@ -1,5 +1,66 @@
-extends ../layout
+extends ../layout.simple
 block css
+    link(rel='stylesheet',href='/components/wangEditor/dist/css/wangEditor.min.css')
+    link(rel='stylesheet',href='/css/common/wangEditor-theme.css')
+    link(rel='stylesheet',href='/css/article/add.css')
 block content
+    div.view-article-add
+        div.row
+            div.col.s12
+                div.input-field.article-title
+                    input#title(type='text',value="#{article.title}")
+                    label(for='title') 文章标题
+                div.input-field.article-desc
+                    textarea#desc.materialize-textarea.validate(length='120') #{article.desc}
+                    label(for='desc') 文章描述
+                div.article-image
+                    form#wallPicForm.image-upload(enctype='multipart/form-data')
+                        h5 请选择你要上传的封面图
+                        input#wallPic.hide(type='file',name='wallpic')
+                        label.btn.red.lighten-2(for='wallPic') 选择文件
+                    div.image-show
+                        img#walldemo(src="#{article.wallpic}")
+                div#divContent.article-content
+                    | !{article.content}
+                div.article-save
+                    div.article-category
+                        span.grey-text 当前栏目：
+                        button#selectColumn(data-id='#{article.column}').btn-flat #{article.column == 1 ? '技术专栏' : 'UI专栏'}
+                    div.article-category
+                        span.grey-text 当前分类：
+                        button#selectCategory(data-id='#{article.category && article.category._id}').btn-flat #{article.category && article.category.name}
+                    button#submitBtn.btn.teal.right 发布
+        div.modal.modal-category#modalCategory
+            div.modal-header.right-align
+                a.btn-close.modal-action.modal-close X
+            div.modal-content
+                each cate in categoryList
+                    if cate.level > 1
+                        div.category-item
+                            if article.category && article.category._id.toString() == cate._id.toString()
+                                input(type='radio',id='#{cate._id}',name='category',checked)
+                            else
+                                input(type='radio',id='#{cate._id}',name='category')
+                            label(for='#{cate._id}') #{cate.name}
+            div.modal-footer.right-align
+                button#saveCategory.btn-flat 保存
+        div.modal.modal-category#modalColumn
+            div.modal-header.right-align
+                a.btn-close.modal-action.modal-close X
+            div.modal-content
+                each col in columns||[]
+                    div.category-item
+                        if col._id == article.column
+                            input(type='radio',id='#{col._id}',name='column',checked)
+                        else
+                            input(type='radio',id='#{col._id}',name='column')
+                        label(for='#{col._id}') #{col.title}
+
+            div.modal-footer.right-align
+                button#saveColumn.btn-flat 保存
 block javascript
+    script(src='/components/jquery-form/jquery.form.js')
+    script(src='/components/wangEditor/dist/js/wangEditor.min.js')
+    script(src='/js/common/editorConfig.js')
+    script(src='/js/article/edit.js')
 

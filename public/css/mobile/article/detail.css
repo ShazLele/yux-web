@@ -1,0 +1,11 @@
+.view-article-detail {
+  display: inline-block;
+  width: 100%;
+  padding: 12px; }
+  .view-article-detail .article-title {
+    margin: 20px 0; }
+  .view-article-detail img {
+    width: auto !important;
+    height: auto !important; }
+
+/*# sourceMappingURL=detail.css.map */

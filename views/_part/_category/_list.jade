@@ -1,0 +1,54 @@
+-var level1Current=null;
+div#L1Container.category-left
+    ul.collection
+        li.collection-item.js-addlevel
+            i.fa.fa-plus 添加一级标题
+        li.collection-item.level-add
+            input#nameL1(type='text',placeholder='标题')
+            input#descL1(type='text',placeholder='描述')
+            button#btnSaveL1.btn-flat.right 保存
+        -var noActive=true;
+        each item in categoryList
+            if item.level == 1
+                if  noActive
+                    -noActive=!noActive;
+                    -level1Current=item._id;
+                    li.collection-item.active(data-id="#{item._id}")
+                        div
+                            span #{item.name}
+                            a(href='#modalLevel').secondary-content
+                                i.fa.fa-cog
+                            p #{item.desc}
+                else
+                    li.collection-item(data-id="#{item._id}")
+                        div
+                            span #{item.name}
+                            a(href='#modalLevel').secondary-content
+                                i.fa.fa-cog
+                            p #{item.desc}
+div#L2Container.category-right
+    ul.collection
+        li.collection-item.js-addlevel
+            i.fa.fa-plus 添加二级标题
+        li.collection-item.level-add
+            input#nameL2(type='text',placeholder='标题')
+            input#descL2(type='text',placeholder='描述')
+            button#btnSaveL2.btn-flat.right 保存
+        -noActive=true;
+        each item,i in categoryList
+            if (item.level == 2) && (JSON.stringify(item.parentid) == JSON.stringify(level1Current))
+                if  noActive
+                    -noActive=!noActive;
+                    li.collection-item.active(data-id="#{item._id}")
+                        div
+                            span #{item.name}
+                            a(href='#modalLevel').secondary-content
+                                i.fa.fa-cog
+                            p #{item.desc}
+                else
+                    li.collection-item(data-id="#{item._id}")
+                        div
+                            span #{item.name}
+                            a(href='#modalLevel').secondary-content
+                                i.fa.fa-cog
+                            p #{item.desc}

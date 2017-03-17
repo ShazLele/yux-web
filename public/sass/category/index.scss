@@ -1,0 +1,64 @@
+@import "../_part/_color";
+@import "../_part/_var";
+
+@mixin collection-style($bgcolor:$teal-lighten-1) {
+  .collection {
+    border: 0;
+    height: 100%;
+    .collection-item {
+      cursor: pointer;
+      overflow: hidden;
+      border: 0;
+      transition: height $transition-timer-lg;
+      height: 41px;
+      &.active {
+        background: $bgcolor;
+        transition-delay: $transition-timer-lg;
+        height: 91px;
+      }
+      i {
+        transition: all 0s;
+      }
+    }
+    .level-add {
+      position: absolute;
+      opacity: 0;
+      height: 0;
+      padding-top: 0;
+      cursor: default;
+      transition: all $transition-timer;
+      &.shown {
+        opacity: 1;
+        height: 100%;
+      }
+      .btn-flat {
+        border: 1px solid $grey-lighten-1;
+        height: auto;
+      }
+    }
+  }
+}
+
+.view-category {
+  width: 100%!important;
+  display: flex;
+  height: 100%;
+  .category-left {
+    float: left;
+    width: 30%;
+    border-right: 1px solid $teal;
+    @include collection-style()
+  }
+  .category-right {
+    float: left;
+    width: 30%;
+
+    @include collection-style($deep-orange-accent-1);
+    .secondary-content {
+      color: $deep-orange-accent-1;
+    }
+  }
+}
+
+
+

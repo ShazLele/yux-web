@@ -1,0 +1,30 @@
+@import "color";
+@import "var";
+
+.input-red {
+  label {
+    color: #000;
+  }
+  input[type=text] {
+    &:focus {
+      border-bottom: 1px solid #000;
+      box-shadow: 0 1px 0 0 #000;
+      & + label {
+        color: #000;
+      }
+    }
+
+    &.valid {
+      border-bottom: 1px solid #000;
+      box-shadow: 0 1px 0 0 #000;
+    }
+    &.invalid {
+      border-bottom: 1px solid #000;
+      box-shadow: 0 1px 0 0 #000;
+    }
+
+  }
+  .prefix.active {
+    color: #000;
+  }
+}

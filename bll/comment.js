@@ -1,25 +1,27 @@
 /**
- * Created by ��ĩ���� on 2016/4/21.
+ * Created by Stone on 2016/4/21.
  */
+"use strict";
 var moment = require('moment'),
-    CommonModel = require('../model/common'),
     CommentDal = require('../dal/comment');
 
-var resmodel = new CommonModel.ResultModel();
+exports.add = function (info) {
 
-exports.create = function(commentinfo, callback) {
-    commentinfo.addtime = moment().format('YYYY-MM-DD hh:mm');
-    commentinfo.status = 1;
-    CommentDal.create(commentinfo, function(res) {
-        callback(res);
-    });
+    info.addtime = moment().format('YYYY-MM-DD hh:mm:ss');
+    info.status = 1;
+    return CommentDal.create(info)
+
 };
 
-exports.find = function(commentinfo, callback) {
-    commentinfo.status = 1;
+exports.find = function (info) {
+
+    info.status = 1;
     var field = null;
-    var sort = { sort: { 'addtime': 1 } };
-    CommentDal.find(commentinfo, field, sort, function(res) {
-        callback(res);
-    });
+    var sort = {sort: {'addtime': 1}};
+    return CommentDal.find(info, field, sort);
+
 };
+
+exports.count = function (info) {
+    return CommentDal.count(info);
+}

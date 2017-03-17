@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AAGA,oBAAqB;EACnB,OAAO,EAAE,YAAY;EACrB,KAAK,EAAE,IAAI;EACX,OAAO,ECII,IAAI;EDHf,mCAAe;IACb,MAAM,EAAE,MAAgB;EAE1B,wBAAI;IACF,KAAK,EAAE,eAAe;IACtB,MAAM,EAAE,eAAe",
+"sources": ["../../../sass/mobile/article/detail.scss","../../../sass/_part/_var.scss"],
+"names": [],
+"file": "detail.css"
+}

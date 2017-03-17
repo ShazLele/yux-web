@@ -1,12 +1,8 @@
-extends ../layout
+extends ../layout.simple
 block css
     link(rel='stylesheet',href='/components/wangEditor/dist/css/wangEditor.min.css')
+    link(rel='stylesheet',href='/css/common/wangEditor-theme.css')
     link(rel='stylesheet',href='/css/article/add.css')
-    style.
-        #div1 {
-            width: 100%;
-            height: 400px;
-        }
 block content
     div.view-article-add
         div.row
@@ -14,17 +10,55 @@ block content
                 div.input-field.article-title
                     input#title(type='text')
                     label(for='title') 文章标题
-                div.input-field.article-title
-                    textarea#desc.materialize-textarea
+                div.input-field.article-desc
+                    textarea#desc.materialize-textarea.validate(length='120')
                     label(for='desc') 文章描述
-                div#div1
-                    p
-                div.article-save.right-align
-                    button#submitBtn.btn.teal 发布
+                div.article-image
+                    form#wallPicForm.image-upload(enctype='multipart/form-data')
+                        h5 请选择你要上传的封面图
+                        input#wallPic.hide(type='file',name='wallpic')
+                        label.btn.red.lighten-2(for='wallPic') 选择文件
+                    div.image-show
+                        img#walldemo(src="")
 
+                div#divContent.article-content
+                div.article-save
+                    div.article-category
+                        span.grey-text 当前栏目：
+                        button#selectColumn.btn-flat 选择栏目
+                    div.article-category
+                        span.grey-text 当前分类：
+                        button#selectCategory.btn-flat 选择分类
+
+                    button#submitBtn.btn.teal.right 发布
+        div.modal.modal-category#modalCategory
+            div.modal-header.right-align
+                a.btn-close.modal-action.modal-close X
+            div.modal-content
+                each cate in categoryList
+                    if cate.level > 1
+                        div.category-item
+                            input(type='radio',id='#{cate._id}',name='category')
+                            label(for='#{cate._id}') #{cate.name}
+
+            div.modal-footer.right-align
+                button#saveCategory.btn-flat 保存
+        div.modal.modal-category#modalColumn
+            div.modal-header.right-align
+                a.btn-close.modal-action.modal-close X
+            div.modal-content
+                each col in columns||[]
+                    div.category-item
+                        input(type='radio',id='#{col._id}',name='column')
+                        label(for='#{col._id}') #{col.title}
+
+            div.modal-footer.right-align
+                button#saveColumn.btn-flat 保存
 
 block javascript
+    script(src='/components/jquery-form/jquery.form.js')
     script(src='/components/wangEditor/dist/js/wangEditor.min.js')
+    script(src='/js/common/editorConfig.js')
     script(src='/js/article/add.js')
 
 

@@ -1,16 +1,86 @@
-@import "../_part/color";
-@import "../_part/media";
-@import "../_part/var";
+@import "../_part/_color";
+@import "../_part/_var";
 
 .view-article-add {
+  padding: $padding-lg;
+  border: 10px double $grey-lighten-5;
+  .article-desc {
+    textarea {
+      border: 2px dashed $assist-border;
+    }
+  }
+  .article-image {
+    margin: $margin-normal 0 $margin-lg 0;
+    display: flex;
+    flex-direction: row;
+
+    .image-upload {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      label {
+        margin-top: $margin-xs;
+      }
+    }
+    .image-show {
+      flex: 1;
+      height: 250px;
+      border: 2px dashed $assist-border;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      img {
+        max-height: 100%;
+        max-width: 100%;
+      }
+    }
+  }
+  .article-content {
+    min-height: 380px;
+    max-height: 600px;
+  }
   .wangEditor-container {
     .clearfix {
       clear: none;
     }
 
   }
-
   .article-save {
     margin-top: $margin-normal;
+    .article-category {
+      display: inline-block;
+      float: left;
+      vertical-align: middle;
+      margin-right: 10px;
+    }
+  }
+  .modal-category {
+    .modal-content {
+      overflow: hidden;
+      .category-item {
+        float: left;
+        input[type="radio"] {
+          + label {
+            border: 2px solid $assist-border;
+            padding: $padding-xs $padding-normal;
+            margin: $margin-xs-2;
+            height: auto;
+            line-height: 100%;
+            &:before, &:after {
+              display: none;
+            }
+          }
+          &:checked {
+            + label {
+              border-color: $teal-lighten-1;
+            }
+          }
+        }
+      }
+
+    }
   }
 }

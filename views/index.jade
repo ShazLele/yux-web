@@ -3,18 +3,23 @@ block css
     link(rel='stylesheet',href='/css/index.css',async)
     link(rel='stylesheet',href='/css/article/list.css',async)
 block content
+    h1.hide 一个最不靠谱的程序员日常网站
     div.view-index
-        div.row.index-ad
-            div.col.s12
-                div.grey.lighten-5
-                    i.fa.fa-qq
-                    i.fa.fa-paper-plane-o
-                    i.fa.fa-weibo
-                    p One More Change
-        div.row.article-list
-            div.col.s12
-                div.list-title
-                    h5 最新文章
+        div.index-ad
+            div
+                //i.fa.fa-qq
+                //i.fa.fa-paper-plane-o.teal-text
+                //i.fa.fa-weibo
+                //p
+                //    a(href='/user/index#/setting') 重置密码，
+                //    a(href='/user/index#/setting') 修改昵称，
+                //    a(href='/pwd/forget') 忘记密码
+                //    |功能已开启
+                img(src='/images/banner/ad.jpg')
+        div.article-list
+            div.list-title
+                h5
+                    span 最新文章
             include _part/_article/_list
 block javascript
     script(src='/js/index.js')

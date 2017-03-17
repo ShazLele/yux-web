@@ -1,0 +1,15 @@
+@import "../_part/_color";
+@import "../_part/_var";
+
+.wangEditor-container {
+  .wangEditor-drop-panel {
+    select {
+      display: inline-block;
+      width: auto;
+      height: 100%;
+    }
+  }
+  code {
+    font-size: $font-size-lg;
+  }
+}

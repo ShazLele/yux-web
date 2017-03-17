@@ -1,0 +1,8 @@
+extends ../layout.simple
+block css
+    link(rel='stylesheet',href='/css/category/index.css')
+block content
+    div#categoryView.view-category
+        include ../_part/_category/_list
+block javascript
+    script(src='/js/category/index.js')

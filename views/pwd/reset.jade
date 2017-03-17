@@ -1,0 +1,29 @@
+extends ../layout.login
+block css
+block left
+    p.left-title 或许被嘲弄
+    p.left-content 但执着依然不变！
+    div
+        a(href='/register').waves-effect.btn.red.lighten-2 去注册
+block right
+    div.center-title
+        h2.teal-text.text-lighten-2 语巷
+        h5.teal-text.text-lighten-2 程序员的一天天
+    div.main-form
+        div.input-field.hide
+            input#email(type='text',value='#{email}')
+            label(for='email')
+        div.input-field
+            input#code(type='text')
+            label(for='code') 验证码
+        div.input-field
+            input#pwd(type='password')
+            label(for='pwd') 新密码
+        div.input-field
+            input#confirmPwd(type='password')
+            label(for='confirmPwd') 确认新密码
+        div.input-group
+            button#resetPwdBtn.waves-effect.btn.teal 重置
+
+block script
+    script(src='/js/pwd/reset.js')

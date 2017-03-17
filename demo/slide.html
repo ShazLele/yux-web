@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .slide {
+            width: 900px;
+            overflow-x: hidden;
+        }
+
+        ul {
+            width: 3600px;
+            margin: 0;
+            padding: 0;
+        }
+
+        li {
+            width: 25%;
+            height: 100px;
+            float: left;
+            list-style: none;
+            padding: 0;
+        }
+
+        .f {
+            background: red;
+        }
+
+        .s {
+            background: blue;
+        }
+
+        .t {
+            background: yellow;
+        }
+
+        .ani {
+            transition: all 0.5s;
+        }
+    </style>
+</head>
+<body>
+
+<div class="slide">
+    <ul id="myul" class="ani">
+        <li class="f">1</li>
+        <li class="s">2</li>
+        <li class="t">3</li>
+        <li class="f">1</li>
+    </ul>
+</div>
+<script>
+    var myUl = document.querySelector("#myul");
+    var i = 0;
+    run();
+    function run() {
+        myUl.style.marginLeft = (-i * 900) + 'px';
+        myUl.classList.add('ani');
+        console.log(i);
+
+
+        if (i >= 4) {
+            i = 0;
+            myUl.classList.remove('ani');
+            myUl.style.marginLeft = (-i * 900) + 'px';
+            setTimeout(function () {
+                run();
+            });
+        } else {
+            if (i == 0) {
+                setTimeout(function () {
+                    run();
+                });
+            } else {
+                setTimeout(function () {
+                    run();
+                }, 1000);
+            }
+            i++;
+        }
+
+
+    }
+</script>
+</body>
+</html>

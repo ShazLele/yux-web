@@ -1,0 +1,49 @@
+extends ../../layout.mobile
+block css
+    link(rel='stylesheet',href='/components/wangEditor/dist/css/wangEditor.min.css')
+    link(rel='stylesheet',href='/css/common/wangEditor-theme.css')
+    link(rel='stylesheet',href='/css/article/detail.css')
+    link(rel='stylesheet',href='/css/mobile/article/detail.css')
+block content
+    if article
+        div.view-article-detail
+            h5.center-align.article-title= article.title
+            div.center-align.article-info
+                a= article.user ? article.user.nickname : '获取失败'
+                span 发表于: #{article.addtime.toString().split('GMT')[0]}
+                span 分类:
+                    a(href='#') #{(article.category && article.category.name) || '暂无'}
+                span 阅读( #{article.reading} )
+                span 评论
+                    a.js-ccount(href='#comments') ( #{(article.comments && article.comments.length) || 0} )
+            div.article-desc
+                p.yux-title
+                    span 简介:
+                p #{article.desc}
+            div.article-content.wangEditor-container
+                div.article-content.wangEditor-txt
+                    | !{article.content}
+            div.article-options
+                div.row
+                    div.col.m2.s12
+                        p.right-align.hide-on-small-and-down 温馨提示
+                        p.hide-on-med-and-up 温馨提示
+                    div.col.m10.s12
+                        span.
+                            本站包含转载和原创文章，
+                            目前文章仅为我的学生定制，
+                            如果你需要分享，
+                            不用问我，随意复制和转发，以供大家学习参考，
+                            如果发现其中的知识技术点错误，请务必指出，
+                            本人会及时更改。
+            div#comments.article-comments
+                div.comments-menu
+                    p.left.list-title
+                        span.js-ccount #{(article.comments && article.comments.length) || 0}条评论
+                        span (
+                        a 按时间排序
+                        a 按评论排序
+                        a 按喜欢排序
+                        span )
+                div#commentsList.comments-list
+                    p 加载中。。。

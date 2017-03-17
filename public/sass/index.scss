@@ -1,6 +1,5 @@
-@import "_part/color";
-@import "_part/media";
-@import "_part/var";
+@import "_part/_color";
+@import "_part/_var";
 
 .view-index {
   .index-ad {
@@ -13,9 +12,13 @@
       justify-content: center;
       text-align: center;
       font-size: 5rem;
+      img {
+        max-width: 100%;
+        max-height: 100%;
+      }
       p {
         display: inline-block;
-        font-size: 3rem;
+        font-size: 2rem;
       }
       i {
         position: absolute;

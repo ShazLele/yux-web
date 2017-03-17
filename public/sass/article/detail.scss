@@ -1,10 +1,9 @@
-@import "../_part/color";
-@import "../_part/media";
-@import "../_part/var";
+@import "../_part/_color";
+@import "../_part/_var";
 
 $border-width-normal: 2px;
 .view-article-detail {
-
+  padding: 0 $padding-lg-2;
   .article-title {
     margin-top: $margin-lg;
     margin-bottom: $margin-normal;
@@ -29,16 +28,19 @@ $border-width-normal: 2px;
     & > span {
       margin: 0 $margin-xs-2;
       a {
-        margin-left: $margin-xs-2;
+        //margin-left: $margin-xs-2;
       }
     }
-    & > a {
+    a {
       margin: 0 $margin-xs-2;
     }
   }
   .article-content {
     padding-bottom: $padding-normal;
     border-bottom: 4px solid $assist-border;
+    border: 0;
+    max-width: 100%;
+    word-break: break-all;
     img {
       max-width: 100%;
     }
@@ -113,6 +115,25 @@ $border-width-normal: 2px;
           i {
             margin-right: $margin-xs-3;
           }
+        }
+      }
+    }
+    .comments-list {
+      .comments-item {
+        display: inline-block;
+        width: 100%;
+        border-bottom: 1px solid $assist-border;
+        padding-top: $padding-xs;
+        .item-title {
+          .comments-nickname {
+            margin: 0;
+          }
+          .comments-date {
+            font-size: $font-size-xs;
+            color: $grey;
+          }
+        }
+        .item-content {
         }
       }
     }

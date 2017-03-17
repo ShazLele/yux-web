@@ -1,0 +1,42 @@
+extends layout.login
+block css
+
+block left
+    p.left-title 或许被嘲弄
+    p.left-content 但执着依然不变！
+    div
+        a(href='/login').waves-effect.btn.teal 去登录
+block right
+    div.view-register
+        div.center-title
+            h2.red-text.text-lighten-2 语巷
+            h5.red-text.text-lighten-2 程序员的一天天
+        div.main-form
+            div.input-field
+                input#email(type='email')
+                label(for='email') 邮箱
+            div.input-field
+                input#nickname(type='text')
+                label(for='text') 昵称
+            div.input-field
+                input#password(type='password')
+                label(for='password') 密码
+            div.input-field
+                input#password2(type='password')
+                label(for='password2') 确认密码
+            div.input-group
+                button#registerBtn.waves-effect.btn.red.lighten-2 注册
+    div.modal#modalcertify
+        div.modal-header
+            a.btn-close.right.modal-action.modal-close X
+        div.modal-content
+            h5 恭喜你，注册成功
+            p
+                | 激活链接已发送至你的
+                a.red-text#certifyEmail
+                | 邮箱,请前去激活.
+            p 激活后就可以登录啦！
+            a(href='/login').btn.red.lighten-2.white-text.right 已激活
+
+block script
+    script(src='/js/register.js')

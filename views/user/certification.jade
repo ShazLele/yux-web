@@ -1,0 +1,10 @@
+doctype html
+html
+    head
+        title 认证
+    body
+        if success
+            h4 认证成功，是否去登录
+            a(href='/login') 登录
+        else
+            h4 认证失败,可能链接已失效

@@ -1,0 +1,10 @@
+@import "color";
+@import "var";
+
+.modal {
+  .modal-header {
+    .btn-close {
+      padding: $padding-xs;
+    }
+  }
+}

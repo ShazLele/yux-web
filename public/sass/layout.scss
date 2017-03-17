@@ -1,33 +1,32 @@
-@import "_part/color";
-@import "_part/media";
-@import "_part/var";
-
-.view-header {
-  background: $white;
-  nav {
-    .brand-logo {
-      font-size: 1.5rem;
-      i{
-        margin-right:$margin-xs-2;
-      }
-    }
-  }
-  .header-nav {
-    margin-left: 80px;
-  }
-}
+@import "_part/_color";
+@import "_part/_var";
+@import "_part/_web/_header";
+@import "_part/_web/_footer";
 
 .view-layout {
 
-  margin-top: $margin-normal;
+  margin-top: $margin-xs;
   .layout-main {
-
+    overflow: hidden;
+    margin: 0 auto;
+    min-width: $main-width;
+    max-width: $max-main-width;
+    display: flex;
+    flex-flow: row;
+    align-items: stretch;
+    .main-content {
+      padding: $padding-lg;
+      width: 75%;
+      float: left;
+      display: flex;
+      flex-direction: column;
+      min-height: 400px;
+    }
     .main-aside {
       background: $grey-lighten-4;
       padding: 0 $padding-normal;
-      @media #{$medium-and-down} {
-        padding: 0 0.75rem;
-      }
+      width: 25%;
+      float: left;
       .search-wrapper {
         position: relative;
         input {
@@ -58,6 +57,8 @@
         .menu-type {
           & > li {
             padding: $padding-xs-3 0 $padding-xs-3 $padding-normal;
+            height: 29px;
+            overflow: hidden;
             //font-size: $font-size-xs;
             & > span {
               margin-left: $margin-xs-2;
@@ -82,26 +83,18 @@
         }
       }
     }
-
-    @media #{$medium-and-up}{
+    &.layout-main-simple {
       .main-content {
-        padding: $padding-lg;
+        flex: 1;
+        & > div {
+          width: 75%;
+          margin: 0 auto;
+        }
       }
     }
   }
 
 }
 
-.view-footer {
-  background: $gray-footer;
-  color: $white;
-}
-
-.nav-white {
-  background: $white;
-  a {
-    color: $black;
-  }
-}
 
 

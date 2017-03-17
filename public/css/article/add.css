@@ -1,6 +1,56 @@
-.view-article-add .wangEditor-container .clearfix {
-  clear: none; }
-.view-article-add .article-save {
-  margin-top: 20px; }
+.view-article-add {
+  padding: 30px;
+  border: 10px double #fafafa; }
+  .view-article-add .article-desc textarea {
+    border: 2px dashed #e0e0e0; }
+  .view-article-add .article-image {
+    margin: 20px 0 30px 0;
+    display: flex;
+    flex-direction: row; }
+    .view-article-add .article-image .image-upload {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center; }
+      .view-article-add .article-image .image-upload label {
+        margin-top: 12px; }
+    .view-article-add .article-image .image-show {
+      flex: 1;
+      height: 250px;
+      border: 2px dashed #e0e0e0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center; }
+      .view-article-add .article-image .image-show img {
+        max-height: 100%;
+        max-width: 100%; }
+  .view-article-add .article-content {
+    min-height: 380px;
+    max-height: 600px; }
+  .view-article-add .wangEditor-container .clearfix {
+    clear: none; }
+  .view-article-add .article-save {
+    margin-top: 20px; }
+    .view-article-add .article-save .article-category {
+      display: inline-block;
+      float: left;
+      vertical-align: middle;
+      margin-right: 10px; }
+  .view-article-add .modal-category .modal-content {
+    overflow: hidden; }
+    .view-article-add .modal-category .modal-content .category-item {
+      float: left; }
+      .view-article-add .modal-category .modal-content .category-item input[type="radio"] + label {
+        border: 2px solid #e0e0e0;
+        padding: 12px 20px;
+        margin: 6px;
+        height: auto;
+        line-height: 100%; }
+        .view-article-add .modal-category .modal-content .category-item input[type="radio"] + label:before, .view-article-add .modal-category .modal-content .category-item input[type="radio"] + label:after {
+          display: none; }
+      .view-article-add .modal-category .modal-content .category-item input[type="radio"]:checked + label {
+        border-color: #26a69a; }
 
 /*# sourceMappingURL=add.css.map */

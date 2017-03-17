@@ -16,8 +16,13 @@
     "tests"
   ],
   "dependencies": {
-    "Materialize": "materialize#^0.97.6",
     "jquery": "^3.1.1",
-    "wangEditor": "^2.1.22"
+    "wangEditor": "^2.1.22",
+    "jquery-form": "^3.46.0",
+    "materialize": "^0.97.8",
+    "clipboard": "^1.5.15",
+    "react": "^15.4.1",
+    "babel": "^5.8.38",
+    "font-awesome": "^4.7.0"
   }
 }

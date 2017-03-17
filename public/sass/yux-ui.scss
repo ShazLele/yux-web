@@ -1,12 +1,8 @@
-@import "_part/color";
-@import "_part/media";
-@import "_part/var";
-@import "_part/normalize";
-@import "_part/base";
-@import "_part/grid";
-@import "_part/text";
-@import "_part/tabs";
-
-
-
-@import "layout";
+@import "_part/_color";
+@import "_part/_var";
+//@import "_part/_normalize";
+@import "_part/_base";
+@import "_part/_text";
+@import "_part/_tabs";
+@import "_part/_form";
+@import "_part/_modal";

@@ -1,0 +1,149 @@
+@import "../_part/_color";
+@import "../_part/_var";
+@import "../_part/_web/_header";
+@import "../_part/_web/_footer";
+
+.user-center {
+  height: 100%;
+  min-height: $main-height;
+  .yux-usercenter {
+    min-width: $main-width;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+
+    .view-wallpic {
+      flex: 4;
+      height: 100%;
+    }
+    .view-menu {
+      flex: 1;
+      ul {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        color: $white;
+        margin: 0;
+        li {
+          flex: 1;
+          a {
+            height: 100%;
+            color: $white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            text-align: center;
+            user-select: none;
+            cursor: pointer;
+            &:hover {
+              background: $teal-lighten-2;
+            }
+            &.active {
+              background: $teal-lighten-1;
+            }
+            i {
+              display: block;
+              font-size: $font-size-lg-4;
+              margin-bottom: $margin-xs-2;
+            }
+          }
+
+        }
+      }
+    }
+    .view-main {
+      flex: 10;
+      height: 100%;
+      padding: $padding-lg 0;
+      overflow: auto;
+      .page-info {
+        margin: 0 auto;
+        width: $user-content-width;
+        display: flex;
+        flex-direction: row;
+
+        .info-img {
+          width: 160px;
+          img {
+            border-radius: 50%;
+            width: 120px;
+            height: 120px;
+          }
+        }
+        .info-main {
+          flex: 1;
+          & > div {
+            display: flex;
+            flex-direction: row;
+            & > div {
+              flex: 1;
+            }
+          }
+        }
+      }
+      .page-article {
+
+      }
+      .content-list {
+        width: $user-content-width;
+        margin: 0 auto;
+        .loading {
+          text-align: center;
+          padding-top: $padding-lg-3;
+        }
+        .item {
+          margin: $margin-xs 0;
+          background: $white;
+          padding: $padding-xs-2 $padding-lg;
+          .item-date {
+            font-weight: 600;
+          }
+          > p {
+            > span, > a {
+              margin-right: $margin-xs;
+            }
+          }
+        }
+      }
+      .page-setting {
+        margin: 0 auto;
+        width: $user-content-width;
+        .setting-section {
+          padding: $padding-lg;
+          margin-bottom: $margin-lg;
+        }
+      }
+    }
+  }
+}
+
+.wallpic {
+  .wallpic-main {
+    color: $white;
+    .wallpic-headpic {
+      width: 120px;
+      height: 120px;
+      margin: 10% auto 0 auto;
+      border-radius: 50%;
+      overflow: hidden;
+      img {
+        width: 100%;
+      }
+    }
+    .wallpic-info {
+      text-align: center;
+    }
+    .wallpic-edit {
+      padding: $padding-xs-2 0;
+      text-align: center;
+      .btn-flat {
+        border: 1px solid $white;
+        color: $white;
+      }
+    }
+  }
+}
+
+
+

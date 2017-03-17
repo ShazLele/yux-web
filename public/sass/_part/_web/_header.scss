@@ -1,0 +1,53 @@
+.view-header {
+  background: $white;
+  min-width: $main-width;
+  .nav {
+    min-width: $main-width;
+    max-width: $max-main-width;
+    margin: 0 auto;
+    color: $black;
+    height: 56px;
+    line-height: 56px;
+    .brand-logo {
+      position: absolute;
+      font-size: $font-size-lg-3;
+      i {
+        margin-right: $margin-xs-2;
+      }
+    }
+    .header-nav {
+      margin: 0 0 0 80px;
+      height: 56px;
+      line-height: 56px;
+      li {
+        float: left;
+        padding: 0 $padding-normal;
+        a {
+          color: $black;
+          &:hover {
+            color: $teal-lighten-1;
+          }
+        }
+        &.active {
+          a {
+            color: $teal-lighten-1;
+            position: relative;
+            &:after {
+              content: '';
+              bottom: 0;
+              right: 0;
+              position: absolute;
+              display: inline-block;
+              height: 3px;
+              width: 100%;
+              background: $teal-lighten-1;
+            }
+          }
+
+        }
+      }
+    }
+
+  }
+}
+

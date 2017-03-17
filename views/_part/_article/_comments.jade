@@ -1,0 +1,9 @@
+div
+
+    each item in commentsList||[]
+        div.comments-item
+            div.item-title
+                a.comments-nickname.teal-text #{item.nickname}
+                span.right.comments-date #{item.addtime}
+            div.item-content
+                p #{item.content}

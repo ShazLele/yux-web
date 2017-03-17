@@ -1,28 +1,35 @@
-doctype html
-html
-    head
-        meta(charset='UTF-8')
-        meta(name='viewport',content='width=device-width,initail-scale=1')
-        title= title
-        link(rel='stylesheet',href='/components/Materialize/dist/css/materialize.css')
-        link(rel='stylesheet',href='/components/font-awesome-4.6.3/css/font-awesome.css')
-        link(rel='stylesheet',href='/css/yux-ui.css')
-        link(rel='stylesheet',href='/css/login.css')
-    body.view-login
-        div.fullscreen
-            div.hide-on-small-and-down.left-container
-            div.center-container.container
-                div.row
-                    div.login-form.col.l6.m8.s12.offset-l3.offset-m2
-                        div.input-field
-                            input#email(type='text')
-                            label(for='email') 邮箱
-                        div.input-field
-                            input#password(type='text')
-                            label(for='password') 密码
-                        div.input-group
-                            button#loginBtn.btn.teal 登录
-            div.hide-on-small-and-down.right-container
-        script(src='/components/jquery/dist/jquery.min.js')
-        script(src='/components/Materialize/dist/js/materialize.min.js')
-        script(src='/js/login.js')
+extends layout.login
+block css
+block left
+    p.left-title 或许被嘲弄
+    p.left-content 但执着依然不变！
+    div
+        a(href='/register').waves-effect.btn.red.lighten-2 去注册
+block right
+    div.center-title
+        h2.teal-text.text-lighten-2 语巷
+        h5.teal-text.text-lighten-2 程序员的一天天
+    div.main-form
+        div.input-field
+            input#email(type='email')
+            label(for='email') 邮箱
+        div.input-field
+            input#password(type='password')
+            label(for='password') 密码
+        div.input-group
+            button#loginBtn.waves-effect.btn.teal 登录
+            a(href='/pwd/forget').right 忘记密码？
+    div.modal#modalSendEmail
+        div.modal-header
+            a.btn-close.right.modal-action.modal-close X
+        div.modal-content
+            h5 登录失败
+            p
+                | 不好意思，由于你的
+                a.red-text#certifyEmail
+                | 邮箱尚未激活，你暂时不可以登录，
+                | 请去邮箱查收激活邮件，
+            p 是否重新发送激活邮件？
+            button#btnSend.btn.white-text.right 发送激活链接
+block script
+    script(src='/js/login.js')

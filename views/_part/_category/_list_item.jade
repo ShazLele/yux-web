@@ -1,0 +1,29 @@
+ul.collection
+    li.collection-item.js-addlevel
+        i.fa.fa-plus
+            case level
+                when 1
+                    | 添加一级标题
+                when 2
+                    | 添加二级标题
+                default
+                    | 添加三级标题
+    li.collection-item.level-add
+        input(id='nameL#{level}',type='text',placeholder='标题')
+        input(id='descL#{level}',type='text',placeholder='描述')
+        button(id='btnSaveL#{level}').btn-flat.right 保存
+    each item,i in categoryList
+        if i == 0
+            li.collection-item.active(data-id="#{item._id}")
+                div
+                    span #{item.name}
+                    a(href='#modalLevel').secondary-content
+                        i.fa.fa-cog
+                    p #{item.desc}
+        else
+            li.collection-item(data-id="#{item._id}")
+                div
+                    span #{item.name}
+                    a(href='#modalLevel').secondary-content
+                        i.fa.fa-cog
+                    p #{item.desc}

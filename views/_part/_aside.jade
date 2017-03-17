@@ -1,49 +1,17 @@
-aside.col.l3.hide-on-med-and-down.main-aside
+aside.main-aside
     div.search-wrapper
-        input#search
-        i.fa.fa-search
-
+        input#search(placeholder='请输入关键字')
+        i.fa.fa-search#btnSearch
     ul.menu-wrapper
         li
-            p.menu-title 分类目录
-            ul.menu-type
-                li
-                    a js
-                    span (10)
-                li
-                    a css
-                    span (11)
-                li
-                    a node
-                    span (22)
-                li
-                    a angular
-                    span (30)
+            p.menu-title 文章分类
+            div.menu-hotlabel
+                for item in categoryList||[]
+                    if item.level == 2 && (!column || (column && item.column == column))
+                        a(href='/article/list/#{item.column || 1}/#{item._id}') #{item.name}
         li
             p.menu-title 近期文章
             ul.menu-type
-                li
-                    a nodejs基础教程
-                li
-                    a 快速入门angular
-                li
-                    a 你不知道的es6
-                li
-                    a 一起学习react
-        li
-            p.menu-title 热门标签
-            div.menu-hotlabel
-                -var num=['js','css','nodejs','react','angularjs'];
-                for i in num
-                    a 标签#{i}
-        li
-            p.menu-title 相关文章
-            ul.menu-type
-                li
-                    a nodejs基础教程
-                li
-                    a 快速入门angular
-                li
-                    a 你不知道的es6
-                li
-                    a 一起学习react
+                each article in recentArticles||[]
+                    li
+                        a(href="/article/detail/#{article._id}") #{article.title}

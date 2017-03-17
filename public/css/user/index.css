@@ -1,0 +1,153 @@
+.view-header {
+  background: #fff;
+  min-width: 1325px; }
+  .view-header .nav {
+    min-width: 1325px;
+    max-width: 1500px;
+    margin: 0 auto;
+    color: #000;
+    height: 56px;
+    line-height: 56px; }
+    .view-header .nav .brand-logo {
+      position: absolute;
+      font-size: 20px; }
+      .view-header .nav .brand-logo i {
+        margin-right: 6px; }
+    .view-header .nav .header-nav {
+      margin: 0 0 0 80px;
+      height: 56px;
+      line-height: 56px; }
+      .view-header .nav .header-nav li {
+        float: left;
+        padding: 0 20px; }
+        .view-header .nav .header-nav li a {
+          color: #000; }
+          .view-header .nav .header-nav li a:hover {
+            color: #26a69a; }
+        .view-header .nav .header-nav li.active a {
+          color: #26a69a;
+          position: relative; }
+          .view-header .nav .header-nav li.active a:after {
+            content: '';
+            bottom: 0;
+            right: 0;
+            position: absolute;
+            display: inline-block;
+            height: 3px;
+            width: 100%;
+            background: #26a69a; }
+
+.view-footer {
+  background: #263238;
+  color: #fff;
+  min-width: 1325px;
+  padding-left: 20px; }
+  .view-footer .footer-main {
+    min-width: 1325px;
+    max-width: 1500px;
+    margin: auto;
+    padding-bottom: 20px; }
+
+.user-center {
+  height: 100%;
+  min-height: 620px; }
+  .user-center .yux-usercenter {
+    min-width: 1325px;
+    height: 100%;
+    display: flex;
+    flex-direction: row; }
+    .user-center .yux-usercenter .view-wallpic {
+      flex: 4;
+      height: 100%; }
+    .user-center .yux-usercenter .view-menu {
+      flex: 1; }
+      .user-center .yux-usercenter .view-menu ul {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        color: #fff;
+        margin: 0; }
+        .user-center .yux-usercenter .view-menu ul li {
+          flex: 1; }
+          .user-center .yux-usercenter .view-menu ul li a {
+            height: 100%;
+            color: #fff;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            text-align: center;
+            user-select: none;
+            cursor: pointer; }
+            .user-center .yux-usercenter .view-menu ul li a:hover {
+              background: #4db6ac; }
+            .user-center .yux-usercenter .view-menu ul li a.active {
+              background: #26a69a; }
+            .user-center .yux-usercenter .view-menu ul li a i {
+              display: block;
+              font-size: 26px;
+              margin-bottom: 6px; }
+    .user-center .yux-usercenter .view-main {
+      flex: 10;
+      height: 100%;
+      padding: 30px 0;
+      overflow: auto; }
+      .user-center .yux-usercenter .view-main .page-info {
+        margin: 0 auto;
+        width: 660px;
+        display: flex;
+        flex-direction: row; }
+        .user-center .yux-usercenter .view-main .page-info .info-img {
+          width: 160px; }
+          .user-center .yux-usercenter .view-main .page-info .info-img img {
+            border-radius: 50%;
+            width: 120px;
+            height: 120px; }
+        .user-center .yux-usercenter .view-main .page-info .info-main {
+          flex: 1; }
+          .user-center .yux-usercenter .view-main .page-info .info-main > div {
+            display: flex;
+            flex-direction: row; }
+            .user-center .yux-usercenter .view-main .page-info .info-main > div > div {
+              flex: 1; }
+      .user-center .yux-usercenter .view-main .content-list {
+        width: 660px;
+        margin: 0 auto; }
+        .user-center .yux-usercenter .view-main .content-list .loading {
+          text-align: center;
+          padding-top: 80px; }
+        .user-center .yux-usercenter .view-main .content-list .item {
+          margin: 12px 0;
+          background: #fff;
+          padding: 6px 30px; }
+          .user-center .yux-usercenter .view-main .content-list .item .item-date {
+            font-weight: 600; }
+          .user-center .yux-usercenter .view-main .content-list .item > p > span, .user-center .yux-usercenter .view-main .content-list .item > p > a {
+            margin-right: 12px; }
+      .user-center .yux-usercenter .view-main .page-setting {
+        margin: 0 auto;
+        width: 660px; }
+        .user-center .yux-usercenter .view-main .page-setting .setting-section {
+          padding: 30px;
+          margin-bottom: 30px; }
+
+.wallpic .wallpic-main {
+  color: #fff; }
+  .wallpic .wallpic-main .wallpic-headpic {
+    width: 120px;
+    height: 120px;
+    margin: 10% auto 0 auto;
+    border-radius: 50%;
+    overflow: hidden; }
+    .wallpic .wallpic-main .wallpic-headpic img {
+      width: 100%; }
+  .wallpic .wallpic-main .wallpic-info {
+    text-align: center; }
+  .wallpic .wallpic-main .wallpic-edit {
+    padding: 6px 0;
+    text-align: center; }
+    .wallpic .wallpic-main .wallpic-edit .btn-flat {
+      border: 1px solid #fff;
+      color: #fff; }
+
+/*# sourceMappingURL=index.css.map */

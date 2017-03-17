@@ -1,50 +1,39 @@
-div.view-header.navbar-fixed
-    nav.nav-white
-        div.nav-wrapper
-            div.container
-                div.row
-                    div.col-xs-12
-                        a.brand-logo(href='#')
-                            i.fa.fa-paper-plane-o
-                            | yux
-                            a.button-collapse(data-activates='mobile-nav')
-                                i.fa.fa-bars
-                            -var hasLogin = user ? 1 : 0;
-                            ul.hide-on-med-and-down.header-nav
-                                each item in menus
-                                    if item.position == 1 && (item.show == 2 || item.show == hasLogin)
-                                        if item.current
-                                            li.active
-                                                a(href="#{item.url}",data-id="#{item.attr}") #{item.title}
-                                        else
-                                            li
-                                                a(href="#{item.url}",data-id="#{item.attr}") #{item.title}
-                            ul.hide-on-med-and-down.header-nav.right
-                                if user
-                                    if usercenter
-                                        li.active
-                                            a(href='/user/index') #{user.nickname}
-                                    else
-                                        li
-                                            a(href='/user/index') #{user.nickname}
-                                each item in menus
-                                    if item.position == 2 && (item.show == 2 || item.show == hasLogin)
-                                        li
-                                            a(href='#{item.url}',data-id="#{item.attr}") #{item.title}
+div.view-header
+    div.nav
+        span.brand-logo
+            i.fa.fa-paper-plane-o
+            | Yux
+        -var hasLogin = user ? 1 : 0;
+        ul.header-nav.left
+            each item in menus||[]
+                if item.position == 1
+                    if item.show == 2
+                        li(class='#{item.current ? "active" : ""}')
+                            a(href="#{item.url}",data-id="#{item.attr}") #{item.title}
+                    if user
+                        if item.show == 1 && item.role <= user.role
+                            li(class='#{item.current ? "active" : ""}')
+                                a(href="#{item.url}",data-id="#{item.attr}") #{item.title}
+                    else
+                        if item.show == 0
+                            li(class='#{item.current ? "active" : ""}')
+                                a(href="#{item.url}",data-id="#{item.attr}") #{item.title}
+        ul.header-nav.right
+            if user
+                li(class='#{usercenter ? "active" : ""}')
+                    a(href='/user/index') #{user.nickname}
+            each item in menus||[]
+                if item.position == 2
+                    if item.show == 2
+                        li(class='#{item.current ? "active" : ""}')
+                            a(href="#{item.url}",data-id="#{item.attr}") #{item.title}
 
-                            ul.side-nav#mobile-nav
-                                each item in menus
-                                    if  item.show == 2 || item.show == hasLogin
-                                        if item.current
-                                            li.active
-                                                a(href="#{item.url}",data-id="#{item.attr}") #{item.title}
-                                        else
-                                            li
-                                                a(href="#{item.url}",data-id="#{item.attr}") #{item.title}
-                                if user
-                                    if usercenter
-                                        li.active
-                                            a(href='/user/index') #{user.nickname}
-                                    else
-                                        li
-                                            a(href='/user/index') #{user.nickname}
+                    if user
+                        if item.show == 1 && item.role <= user.role
+                            li(class='#{item.current ? "active" : ""}')
+                                a(href="#{item.url}",data-id="#{item.attr}") #{item.title}
+                    else
+                        if item.show == 0
+                            li(class='#{item.current ? "active" : ""}')
+                                a(href="#{item.url}",data-id="#{item.attr}") #{item.title}
+

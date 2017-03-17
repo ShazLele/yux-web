@@ -6,5 +6,5 @@ npm-debug.log
 static/*
 test/*
 uploadfiles/*
-server.js
+webpack.server.js
 server-for-cros.js

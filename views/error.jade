@@ -1,8 +1,8 @@
-extends layout
-
-block content
-  br
-  h2 404 NotFound
-  h5 访问的页面不存在，请查看访问链接
-  h5 原因分析：
-  h6
+doctype html
+html
+    head
+        title #{title||403}
+    body
+        h2 #{errorTitle||'403 无权限访问'}
+        h5 #{errorContent||'由于你的权限问题，无法访问该页面'}
+        h5 原因分析：暂无

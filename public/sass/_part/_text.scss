@@ -1,5 +1,4 @@
 @import "color";
-@import "media";
 @import "var";
 
 a {
@@ -10,14 +9,5 @@ a {
   &:hover {
     //text-decoration: underline;
     color: $a-active-color;
-  }
-}
-
-p {
-  @media #{$medium-only} {
-    font-size: 1.15rem;
-  }
-  @media #{$small-and-down} {
-    font-size: 1.25rem;
   }
 }

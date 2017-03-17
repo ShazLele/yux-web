@@ -1,2 +1,8 @@
 /node_modules
+/resource/images/article/*
+/resource/temp
+/public/node_modules
+/public/images/article/*
+/demo/webpack/node_modules
 /.idea
+/demo/node_modules
